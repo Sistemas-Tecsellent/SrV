@@ -1,0 +1,149 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /sellers/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /products/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /brands/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /stores/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /chats/{document} {
+      allow create: if /databases/$(database)/documents/sellers/$(request.auth.uid) in request.resource.data.users;
+      allow read: if /databases/$(database)/documents/sellers/$(request.auth.uid) in resource.data.users;
+      allow write: if /databases/$(database)/documents/sellers/$(request.auth.uid) in resource.data.users;
+      allow delete: if false;
+    }
+
+    match /chat_messages/{document} {
+      allow create: if /databases/$(database)/documents/sellers/$(request.auth.uid) in get(request.resource.data.chat).data.users
+&& /databases/$(database)/documents/sellers/$(request.auth.uid) == request.resource.data.user;
+      allow read: if /databases/$(database)/documents/sellers/$(request.auth.uid) in get(resource.data.chat).data.users;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /categories/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /deliverers/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /ordersForStores/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /deliverersLocation/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /products/{parent}/variants/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/variants/{document} {
+      allow read: if true;
+    }
+
+
+    match /stores/{parent}/workDays/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/workDays/{document} {
+      allow read: if true;
+    }
+
+
+    match /stores/{parent}/storeBrands/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/storeBrands/{document} {
+      allow read: if true;
+    }
+
+
+    match /sellers/{parent}/notifications/{document} {
+      allow create: if request.auth.uid == parent;
+      allow read: if true;
+      allow write: if request.auth.uid == parent;
+      allow delete: if false;
+    }
+
+    match /stores/{parent}/completedOrders/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/completedOrders/{document} {
+      allow read: if true;
+    }
+
+
+    match /stores/{parent}/earningHistory/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /{path=**}/earningHistory/{document} {
+      allow read: if true;
+    }
+
+
+    match /pricingRequests/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+  }
+}

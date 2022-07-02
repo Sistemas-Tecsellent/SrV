@@ -1,0 +1,514 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.tecsellent.srconstruccionvendedor"
+4    android:versionCode="7"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="31" />
+10    <!--
+11         Flutter needs it to communicate with the running application
+12         to allow setting breakpoints, to provide hot reload, etc.
+13    -->
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:4:4-65
+14-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:4:21-63
+15    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+15-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:5:4-77
+15-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:5:21-75
+16    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+16-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:6:4-79
+16-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:6:21-77
+17    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+17-->[:file_picker] /home/alpha/Documents/tecsellent/SrV/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-80
+17-->[:file_picker] /home/alpha/Documents/tecsellent/SrV/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:7:22-77
+18
+19    <queries>
+19-->[:file_picker] /home/alpha/Documents/tecsellent/SrV/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:9:5-15:15
+20        <intent>
+20-->[:file_picker] /home/alpha/Documents/tecsellent/SrV/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:10:9-14:18
+21            <action android:name="android.intent.action.GET_CONTENT" />
+21-->[:file_picker] /home/alpha/Documents/tecsellent/SrV/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-72
+21-->[:file_picker] /home/alpha/Documents/tecsellent/SrV/build/file_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:21-69
+22
+23            <data android:mimeType="*/*" />
+23-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:25:17-75
+24        </intent>
+25    </queries>
+26
+27    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+27-->[com.google.firebase:firebase-auth:21.0.5] /home/alpha/.gradle/caches/transforms-2/files-2.1/f46146a770eac87b43c22f9e8df4bfa0/jetified-firebase-auth-21.0.5/AndroidManifest.xml:24:5-79
+27-->[com.google.firebase:firebase-auth:21.0.5] /home/alpha/.gradle/caches/transforms-2/files-2.1/f46146a770eac87b43c22f9e8df4bfa0/jetified-firebase-auth-21.0.5/AndroidManifest.xml:24:22-76
+28    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- Required by older versions of Google Play services to create IID tokens -->
+28-->[com.google.firebase:firebase-iid:21.1.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/8aa290ee3f45c3c122d8838d953164c5/jetified-firebase-iid-21.1.0/AndroidManifest.xml:24:5-68
+28-->[com.google.firebase:firebase-iid:21.1.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/8aa290ee3f45c3c122d8838d953164c5/jetified-firebase-iid-21.1.0/AndroidManifest.xml:24:22-65
+29    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+29-->[com.google.firebase:firebase-iid:21.1.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/8aa290ee3f45c3c122d8838d953164c5/jetified-firebase-iid-21.1.0/AndroidManifest.xml:26:5-82
+29-->[com.google.firebase:firebase-iid:21.1.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/8aa290ee3f45c3c122d8838d953164c5/jetified-firebase-iid-21.1.0/AndroidManifest.xml:26:22-79
+30
+31    <uses-feature
+31-->[com.google.android.gms:play-services-maps:17.0.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/6d7990861d297fe38727e0aa9d406ac3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:26:5-28:35
+32        android:glEsVersion="0x00020000"
+32-->[com.google.android.gms:play-services-maps:17.0.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/6d7990861d297fe38727e0aa9d406ac3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:27:9-41
+33        android:required="true" />
+33-->[com.google.android.gms:play-services-maps:17.0.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/6d7990861d297fe38727e0aa9d406ac3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:28:9-32
+34
+35    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+35-->[com.android.installreferrer:installreferrer:1.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/35c2cbbec5f134f4a08170ef92ad34d2/jetified-installreferrer-1.0/AndroidManifest.xml:9:5-110
+35-->[com.android.installreferrer:installreferrer:1.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/35c2cbbec5f134f4a08170ef92ad34d2/jetified-installreferrer-1.0/AndroidManifest.xml:9:22-107
+36
+37    <application
+37-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:7:4-69:19
+38        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+38-->[androidx.core:core:1.6.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/ffa170e1659e3ee0300d2d5a1cf02a72/core-1.6.0/AndroidManifest.xml:24:18-86
+39        android:debuggable="true"
+40        android:icon="@mipmap/ic_launcher"
+40-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:10:9-43
+41        android:label="SrConstruccion Vendedores"
+41-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:8:9-50
+42        android:requestLegacyExternalStorage="true"
+42-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:11:9-52
+43        android:supportsRtl="true"
+43-->[com.facebook.android:facebook-login:12.2.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/bd2179d260048ae7f6649235dee8be24/jetified-facebook-login-12.2.0/AndroidManifest.xml:28:18-44
+44        android:usesCleartextTraffic="true" >
+44-->[:cloud_functions] /home/alpha/Documents/tecsellent/SrV/build/cloud_functions/intermediates/library_manifest/debug/AndroidManifest.xml:9:9-44
+45        <meta-data
+45-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:12:9-13:50
+46            android:name="com.facebook.sdk.ApplicationId"
+46-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:12:20-65
+47            android:value="@string/facebook_app_id" />
+47-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:13:9-48
+48
+49        <activity
+49-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:14:9-17:48
+50            android:name="com.facebook.FacebookActivity"
+50-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:14:19-63
+51            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+51-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:15:13-117
+52            android:label="@string/app_name"
+52-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:17:13-45
+53            android:theme="@style/com_facebook_activity_theme" />
+53-->[com.facebook.android:facebook-common:12.2.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/e9bbe4edcae4700af9dd8b0c1b8deea8/jetified-facebook-common-12.2.0/AndroidManifest.xml:33:13-63
+54        <activity
+54-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:18:9-27:20
+55            android:name="com.facebook.CustomTabActivity"
+55-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:19:13-58
+56            android:exported="true" >
+56-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:20:13-36
+57            <intent-filter>
+57-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:21:13-26:29
+58                <action android:name="android.intent.action.VIEW" />
+58-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:22:17-69
+58-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:22:25-66
+59
+60                <category android:name="android.intent.category.DEFAULT" />
+60-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:23:17-76
+60-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:23:27-73
+61                <category android:name="android.intent.category.BROWSABLE" />
+61-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:24:17-78
+61-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:24:27-75
+62
+63                <data android:scheme="@string/fb_login_protocol_scheme" />
+63-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:25:17-75
+63-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:25:23-72
+64            </intent-filter>
+65            <intent-filter>
+65-->[com.facebook.android:facebook-common:12.2.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/e9bbe4edcae4700af9dd8b0c1b8deea8/jetified-facebook-common-12.2.0/AndroidManifest.xml:39:13-48:29
+66                <action android:name="android.intent.action.VIEW" />
+66-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:22:17-69
+66-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:22:25-66
+67
+68                <category android:name="android.intent.category.DEFAULT" />
+68-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:23:17-76
+68-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:23:27-73
+69                <category android:name="android.intent.category.BROWSABLE" />
+69-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:24:17-78
+69-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:24:27-75
+70
+71                <data
+71-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:25:17-75
+72                    android:host="cct.com.tecsellent.srconstruccionvendedor"
+73                    android:scheme="fbconnect" />
+73-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:25:23-72
+74            </intent-filter>
+75        </activity>
+76        <activity
+76-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:29:9-59:20
+77            android:name="com.tecsellent.srconstruccionvendedor.MainActivity"
+77-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:30:13-41
+78            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+78-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:34:13-163
+79            android:exported="true"
+79-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:31:13-36
+80            android:hardwareAccelerated="true"
+80-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:35:13-47
+81            android:launchMode="singleTop"
+81-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:32:13-43
+82            android:theme="@style/LaunchTheme"
+82-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:33:13-47
+83            android:windowSoftInputMode="adjustResize" >
+83-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:36:13-55
+84
+85            <!--
+86                 Specifies an Android theme to apply to this Activity as soon as
+87                 the Android process has started. This theme is visible to the user
+88                 while the Flutter UI initializes. After that, this theme continues
+89                 to determine the Window background behind the Flutter UI.
+90            -->
+91            <meta-data
+91-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:41:13-44:17
+92                android:name="io.flutter.embedding.android.NormalTheme"
+92-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:42:15-70
+93                android:resource="@style/NormalTheme" />
+93-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:43:15-52
+94            <!--
+95                 Displays an Android View that continues showing the launch screen
+96                 Drawable until Flutter paints its first frame, then this splash
+97                 screen fades out. A splash screen is useful to avoid any visual
+98                 gap between the end of Android's launch screen and the painting of
+99                 Flutter's first frame.
+100            -->
+101            <meta-data
+101-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:50:13-53:17
+102                android:name="io.flutter.embedding.android.SplashScreenDrawable"
+102-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:51:15-79
+103                android:resource="@drawable/launch_background" />
+103-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:52:15-61
+104
+105            <intent-filter>
+105-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:54:13-57:29
+106                <action android:name="android.intent.action.MAIN" />
+106-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:55:17-68
+106-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:55:25-66
+107
+108                <category android:name="android.intent.category.LAUNCHER" />
+108-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:56:17-76
+108-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:56:27-74
+109            </intent-filter>
+110        </activity>
+111
+112        <!--
+113             Don't delete the meta-data below.
+114             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java
+115        -->
+116        <meta-data
+116-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:63:9-65:33
+117            android:name="flutterEmbedding"
+117-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:64:13-44
+118            android:value="2" />
+118-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:65:13-30
+119        <meta-data
+119-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:66:9-123
+120            android:name="com.google.android.geo.API_KEY"
+120-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:66:20-65
+121            android:value="AIzaSyAVJA7uQr42hxYrLMWwAsm4boIhTcV5GtU" />
+121-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:66:66-121
+122
+123        <service
+123-->[:cloud_firestore] /home/alpha/Documents/tecsellent/SrV/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-12:19
+124            android:name="com.google.firebase.components.ComponentDiscoveryService"
+124-->[:cloud_firestore] /home/alpha/Documents/tecsellent/SrV/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:8:18-89
+125            android:directBootAware="true"
+125-->[com.google.firebase:firebase-common:20.1.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/fe6fb754da60a9ef2e2d611d00a222a9/jetified-firebase-common-20.1.1/AndroidManifest.xml:35:13-43
+126            android:exported="false" >
+126-->[com.google.firebase:firebase-auth:21.0.5] /home/alpha/.gradle/caches/transforms-2/files-2.1/f46146a770eac87b43c22f9e8df4bfa0/jetified-firebase-auth-21.0.5/AndroidManifest.xml:66:13-37
+127            <meta-data
+127-->[:cloud_firestore] /home/alpha/Documents/tecsellent/SrV/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+128                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
+128-->[:cloud_firestore] /home/alpha/Documents/tecsellent/SrV/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-134
+129                android:value="com.google.firebase.components.ComponentRegistrar" />
+129-->[:cloud_firestore] /home/alpha/Documents/tecsellent/SrV/build/cloud_firestore/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+130            <meta-data
+130-->[:cloud_functions] /home/alpha/Documents/tecsellent/SrV/build/cloud_functions/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-14:85
+131                android:name="com.google.firebase.components:io.flutter.plugins.firebase.functions.FlutterFirebaseAppRegistrar"
+131-->[:cloud_functions] /home/alpha/Documents/tecsellent/SrV/build/cloud_functions/intermediates/library_manifest/debug/AndroidManifest.xml:13:17-128
+132                android:value="com.google.firebase.components.ComponentRegistrar" />
+132-->[:cloud_functions] /home/alpha/Documents/tecsellent/SrV/build/cloud_functions/intermediates/library_manifest/debug/AndroidManifest.xml:14:17-82
+133            <meta-data
+133-->[:firebase_auth] /home/alpha/Documents/tecsellent/SrV/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+134                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
+134-->[:firebase_auth] /home/alpha/Documents/tecsellent/SrV/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-124
+135                android:value="com.google.firebase.components.ComponentRegistrar" />
+135-->[:firebase_auth] /home/alpha/Documents/tecsellent/SrV/build/firebase_auth/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+136            <meta-data
+136-->[:firebase_storage] /home/alpha/Documents/tecsellent/SrV/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+137                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
+137-->[:firebase_storage] /home/alpha/Documents/tecsellent/SrV/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-126
+138                android:value="com.google.firebase.components.ComponentRegistrar" />
+138-->[:firebase_storage] /home/alpha/Documents/tecsellent/SrV/build/firebase_storage/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+139            <meta-data
+139-->[:firebase_core] /home/alpha/Documents/tecsellent/SrV/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-11:85
+140                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
+140-->[:firebase_core] /home/alpha/Documents/tecsellent/SrV/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:10:17-124
+141                android:value="com.google.firebase.components.ComponentRegistrar" />
+141-->[:firebase_core] /home/alpha/Documents/tecsellent/SrV/build/firebase_core/intermediates/library_manifest/debug/AndroidManifest.xml:11:17-82
+142            <meta-data
+142-->[com.google.firebase:firebase-auth:21.0.5] /home/alpha/.gradle/caches/transforms-2/files-2.1/f46146a770eac87b43c22f9e8df4bfa0/jetified-firebase-auth-21.0.5/AndroidManifest.xml:67:13-69:85
+143                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+143-->[com.google.firebase:firebase-auth:21.0.5] /home/alpha/.gradle/caches/transforms-2/files-2.1/f46146a770eac87b43c22f9e8df4bfa0/jetified-firebase-auth-21.0.5/AndroidManifest.xml:68:17-109
+144                android:value="com.google.firebase.components.ComponentRegistrar" />
+144-->[com.google.firebase:firebase-auth:21.0.5] /home/alpha/.gradle/caches/transforms-2/files-2.1/f46146a770eac87b43c22f9e8df4bfa0/jetified-firebase-auth-21.0.5/AndroidManifest.xml:69:17-82
+145            <meta-data
+145-->[com.google.firebase:firebase-functions:20.1.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/093aad98a1f3c0511340e4091d863c89/jetified-firebase-functions-20.1.0/AndroidManifest.xml:18:13-20:85
+146                android:name="com.google.firebase.components:com.google.firebase.functions.FunctionsRegistrar"
+146-->[com.google.firebase:firebase-functions:20.1.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/093aad98a1f3c0511340e4091d863c89/jetified-firebase-functions-20.1.0/AndroidManifest.xml:19:17-111
+147                android:value="com.google.firebase.components.ComponentRegistrar" />
+147-->[com.google.firebase:firebase-functions:20.1.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/093aad98a1f3c0511340e4091d863c89/jetified-firebase-functions-20.1.0/AndroidManifest.xml:20:17-82
+148            <meta-data
+148-->[com.google.firebase:firebase-firestore:24.1.2] /home/alpha/.gradle/caches/transforms-2/files-2.1/4fb5ec458a2dae72d94721609f0f29b0/jetified-firebase-firestore-24.1.2/AndroidManifest.xml:20:13-22:85
+149                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+149-->[com.google.firebase:firebase-firestore:24.1.2] /home/alpha/.gradle/caches/transforms-2/files-2.1/4fb5ec458a2dae72d94721609f0f29b0/jetified-firebase-firestore-24.1.2/AndroidManifest.xml:21:17-111
+150                android:value="com.google.firebase.components.ComponentRegistrar" />
+150-->[com.google.firebase:firebase-firestore:24.1.2] /home/alpha/.gradle/caches/transforms-2/files-2.1/4fb5ec458a2dae72d94721609f0f29b0/jetified-firebase-firestore-24.1.2/AndroidManifest.xml:22:17-82
+151            <meta-data
+151-->[com.google.firebase:firebase-storage:20.0.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/620020a18d337b93833cff3e2621c267/jetified-firebase-storage-20.0.1/AndroidManifest.xml:33:13-35:85
+152                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+152-->[com.google.firebase:firebase-storage:20.0.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/620020a18d337b93833cff3e2621c267/jetified-firebase-storage-20.0.1/AndroidManifest.xml:34:17-107
+153                android:value="com.google.firebase.components.ComponentRegistrar" />
+153-->[com.google.firebase:firebase-storage:20.0.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/620020a18d337b93833cff3e2621c267/jetified-firebase-storage-20.0.1/AndroidManifest.xml:35:17-82
+154            <meta-data
+154-->[com.google.firebase:firebase-iid:21.1.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/8aa290ee3f45c3c122d8838d953164c5/jetified-firebase-iid-21.1.0/AndroidManifest.xml:32:13-34:85
+155                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+155-->[com.google.firebase:firebase-iid:21.1.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/8aa290ee3f45c3c122d8838d953164c5/jetified-firebase-iid-21.1.0/AndroidManifest.xml:33:17-96
+156                android:value="com.google.firebase.components.ComponentRegistrar" />
+156-->[com.google.firebase:firebase-iid:21.1.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/8aa290ee3f45c3c122d8838d953164c5/jetified-firebase-iid-21.1.0/AndroidManifest.xml:34:17-82
+157            <meta-data
+157-->[com.google.firebase:firebase-installations:17.0.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/717b55c725e4fa7602ce3de7a803b6af/jetified-firebase-installations-17.0.1/AndroidManifest.xml:18:13-20:85
+158                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+158-->[com.google.firebase:firebase-installations:17.0.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/717b55c725e4fa7602ce3de7a803b6af/jetified-firebase-installations-17.0.1/AndroidManifest.xml:19:17-127
+159                android:value="com.google.firebase.components.ComponentRegistrar" />
+159-->[com.google.firebase:firebase-installations:17.0.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/717b55c725e4fa7602ce3de7a803b6af/jetified-firebase-installations-17.0.1/AndroidManifest.xml:20:17-82
+160        </service>
+161
+162        <provider
+162-->[:image_picker] /home/alpha/Documents/tecsellent/SrV/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-16:20
+163            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
+163-->[:image_picker] /home/alpha/Documents/tecsellent/SrV/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-82
+164            android:authorities="com.tecsellent.srconstruccionvendedor.flutter.image_provider"
+164-->[:image_picker] /home/alpha/Documents/tecsellent/SrV/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-74
+165            android:exported="false"
+165-->[:image_picker] /home/alpha/Documents/tecsellent/SrV/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-37
+166            android:grantUriPermissions="true" >
+166-->[:image_picker] /home/alpha/Documents/tecsellent/SrV/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-47
+167            <meta-data
+167-->[:image_picker] /home/alpha/Documents/tecsellent/SrV/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-15:75
+168                android:name="android.support.FILE_PROVIDER_PATHS"
+168-->[:image_picker] /home/alpha/Documents/tecsellent/SrV/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:14:17-67
+169                android:resource="@xml/flutter_image_picker_file_paths" />
+169-->[:image_picker] /home/alpha/Documents/tecsellent/SrV/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-72
+170        </provider>
+171        <provider
+171-->[:share_plus] /home/alpha/Documents/tecsellent/SrV/build/share_plus/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-16:20
+172            android:name="dev.fluttercommunity.plus.share.ShareFileProvider"
+172-->[:share_plus] /home/alpha/Documents/tecsellent/SrV/build/share_plus/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-77
+173            android:authorities="com.tecsellent.srconstruccionvendedor.flutter.share_provider"
+173-->[:share_plus] /home/alpha/Documents/tecsellent/SrV/build/share_plus/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-74
+174            android:exported="false"
+174-->[:share_plus] /home/alpha/Documents/tecsellent/SrV/build/share_plus/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-37
+175            android:grantUriPermissions="true" >
+175-->[:share_plus] /home/alpha/Documents/tecsellent/SrV/build/share_plus/intermediates/library_manifest/debug/AndroidManifest.xml:12:13-47
+176            <meta-data
+176-->[:image_picker] /home/alpha/Documents/tecsellent/SrV/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:13:13-15:75
+177                android:name="android.support.FILE_PROVIDER_PATHS"
+177-->[:image_picker] /home/alpha/Documents/tecsellent/SrV/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:14:17-67
+178                android:resource="@xml/flutter_share_file_paths" />
+178-->[:image_picker] /home/alpha/Documents/tecsellent/SrV/build/image_picker/intermediates/library_manifest/debug/AndroidManifest.xml:15:17-72
+179        </provider>
+180
+181        <activity
+181-->[:url_launcher] /home/alpha/Documents/tecsellent/SrV/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:8:9-11:74
+182            android:name="io.flutter.plugins.urllauncher.WebViewActivity"
+182-->[:url_launcher] /home/alpha/Documents/tecsellent/SrV/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:9:13-74
+183            android:exported="false"
+183-->[:url_launcher] /home/alpha/Documents/tecsellent/SrV/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:10:13-37
+184            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+184-->[:url_launcher] /home/alpha/Documents/tecsellent/SrV/build/url_launcher/intermediates/library_manifest/debug/AndroidManifest.xml:11:13-71
+185        <activity android:name="com.facebook.CustomTabMainActivity" />
+185-->[com.facebook.android:facebook-common:12.2.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/e9bbe4edcae4700af9dd8b0c1b8deea8/jetified-facebook-common-12.2.0/AndroidManifest.xml:34:9-71
+185-->[com.facebook.android:facebook-common:12.2.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/e9bbe4edcae4700af9dd8b0c1b8deea8/jetified-facebook-common-12.2.0/AndroidManifest.xml:34:19-68
+186        <!--
+187         The initialization ContentProvider will call FacebookSdk.sdkInitialize automatically
+188         with the application context. This config is merged in with the host app's manifest,
+189         but there can only be one provider with the same authority activated at any given
+190         point; so if the end user has two or more different apps that use Facebook SDK, only the
+191         first one will be able to use the provider. To work around this problem, we use the
+192         following placeholder in the authority to identify each host application as if it was
+193         a completely different provider.
+194        -->
+195        <provider
+195-->[com.facebook.android:facebook-core:12.2.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/cb90521b5953e661d704123698be981e/jetified-facebook-core-12.2.0/AndroidManifest.xml:39:9-42:40
+196            android:name="com.facebook.internal.FacebookInitProvider"
+196-->[com.facebook.android:facebook-core:12.2.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/cb90521b5953e661d704123698be981e/jetified-facebook-core-12.2.0/AndroidManifest.xml:40:13-70
+197            android:authorities="com.tecsellent.srconstruccionvendedor.FacebookInitProvider"
+197-->[com.facebook.android:facebook-core:12.2.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/cb90521b5953e661d704123698be981e/jetified-facebook-core-12.2.0/AndroidManifest.xml:41:13-72
+198            android:exported="false" />
+198-->[com.facebook.android:facebook-core:12.2.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/cb90521b5953e661d704123698be981e/jetified-facebook-core-12.2.0/AndroidManifest.xml:42:13-37
+199
+200        <receiver
+200-->[com.facebook.android:facebook-core:12.2.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/cb90521b5953e661d704123698be981e/jetified-facebook-core-12.2.0/AndroidManifest.xml:44:9-50:20
+201            android:name="com.facebook.CurrentAccessTokenExpirationBroadcastReceiver"
+201-->[com.facebook.android:facebook-core:12.2.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/cb90521b5953e661d704123698be981e/jetified-facebook-core-12.2.0/AndroidManifest.xml:45:13-86
+202            android:exported="false" >
+202-->[com.facebook.android:facebook-core:12.2.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/cb90521b5953e661d704123698be981e/jetified-facebook-core-12.2.0/AndroidManifest.xml:46:13-37
+203            <intent-filter>
+203-->[com.facebook.android:facebook-core:12.2.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/cb90521b5953e661d704123698be981e/jetified-facebook-core-12.2.0/AndroidManifest.xml:47:13-49:29
+204                <action android:name="com.facebook.sdk.ACTION_CURRENT_ACCESS_TOKEN_CHANGED" />
+204-->[com.facebook.android:facebook-core:12.2.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/cb90521b5953e661d704123698be981e/jetified-facebook-core-12.2.0/AndroidManifest.xml:48:17-95
+204-->[com.facebook.android:facebook-core:12.2.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/cb90521b5953e661d704123698be981e/jetified-facebook-core-12.2.0/AndroidManifest.xml:48:25-92
+205            </intent-filter>
+206        </receiver>
+207        <receiver
+207-->[com.facebook.android:facebook-core:12.2.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/cb90521b5953e661d704123698be981e/jetified-facebook-core-12.2.0/AndroidManifest.xml:51:9-57:20
+208            android:name="com.facebook.AuthenticationTokenManager$CurrentAuthenticationTokenChangedBroadcastReceiver"
+208-->[com.facebook.android:facebook-core:12.2.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/cb90521b5953e661d704123698be981e/jetified-facebook-core-12.2.0/AndroidManifest.xml:52:13-118
+209            android:exported="false" >
+209-->[com.facebook.android:facebook-core:12.2.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/cb90521b5953e661d704123698be981e/jetified-facebook-core-12.2.0/AndroidManifest.xml:53:13-37
+210            <intent-filter>
+210-->[com.facebook.android:facebook-core:12.2.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/cb90521b5953e661d704123698be981e/jetified-facebook-core-12.2.0/AndroidManifest.xml:54:13-56:29
+211                <action android:name="com.facebook.sdk.ACTION_CURRENT_AUTHENTICATION_TOKEN_CHANGED" />
+211-->[com.facebook.android:facebook-core:12.2.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/cb90521b5953e661d704123698be981e/jetified-facebook-core-12.2.0/AndroidManifest.xml:55:17-103
+211-->[com.facebook.android:facebook-core:12.2.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/cb90521b5953e661d704123698be981e/jetified-facebook-core-12.2.0/AndroidManifest.xml:55:25-100
+212            </intent-filter>
+213        </receiver>
+214
+215        <uses-library
+215-->[androidx.window:window:1.0.0-beta04] /home/alpha/.gradle/caches/transforms-2/files-2.1/00195e664c043ec1c6cae52921304b8c/jetified-window-1.0.0-beta04/AndroidManifest.xml:25:9-27:40
+216            android:name="androidx.window.extensions"
+216-->[androidx.window:window:1.0.0-beta04] /home/alpha/.gradle/caches/transforms-2/files-2.1/00195e664c043ec1c6cae52921304b8c/jetified-window-1.0.0-beta04/AndroidManifest.xml:26:13-54
+217            android:required="false" />
+217-->[androidx.window:window:1.0.0-beta04] /home/alpha/.gradle/caches/transforms-2/files-2.1/00195e664c043ec1c6cae52921304b8c/jetified-window-1.0.0-beta04/AndroidManifest.xml:27:13-37
+218        <uses-library
+218-->[androidx.window:window:1.0.0-beta04] /home/alpha/.gradle/caches/transforms-2/files-2.1/00195e664c043ec1c6cae52921304b8c/jetified-window-1.0.0-beta04/AndroidManifest.xml:28:9-30:40
+219            android:name="androidx.window.sidecar"
+219-->[androidx.window:window:1.0.0-beta04] /home/alpha/.gradle/caches/transforms-2/files-2.1/00195e664c043ec1c6cae52921304b8c/jetified-window-1.0.0-beta04/AndroidManifest.xml:29:13-51
+220            android:required="false" />
+220-->[androidx.window:window:1.0.0-beta04] /home/alpha/.gradle/caches/transforms-2/files-2.1/00195e664c043ec1c6cae52921304b8c/jetified-window-1.0.0-beta04/AndroidManifest.xml:30:13-37
+221
+222        <activity
+222-->[com.google.firebase:firebase-auth:21.0.5] /home/alpha/.gradle/caches/transforms-2/files-2.1/f46146a770eac87b43c22f9e8df4bfa0/jetified-firebase-auth-21.0.5/AndroidManifest.xml:27:9-44:20
+223            android:name="com.google.firebase.auth.internal.GenericIdpActivity"
+223-->[com.google.firebase:firebase-auth:21.0.5] /home/alpha/.gradle/caches/transforms-2/files-2.1/f46146a770eac87b43c22f9e8df4bfa0/jetified-firebase-auth-21.0.5/AndroidManifest.xml:28:13-80
+224            android:excludeFromRecents="true"
+224-->[com.google.firebase:firebase-auth:21.0.5] /home/alpha/.gradle/caches/transforms-2/files-2.1/f46146a770eac87b43c22f9e8df4bfa0/jetified-firebase-auth-21.0.5/AndroidManifest.xml:29:13-46
+225            android:exported="true"
+225-->[com.google.firebase:firebase-auth:21.0.5] /home/alpha/.gradle/caches/transforms-2/files-2.1/f46146a770eac87b43c22f9e8df4bfa0/jetified-firebase-auth-21.0.5/AndroidManifest.xml:30:13-36
+226            android:launchMode="singleTask"
+226-->[com.google.firebase:firebase-auth:21.0.5] /home/alpha/.gradle/caches/transforms-2/files-2.1/f46146a770eac87b43c22f9e8df4bfa0/jetified-firebase-auth-21.0.5/AndroidManifest.xml:31:13-44
+227            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+227-->[com.google.firebase:firebase-auth:21.0.5] /home/alpha/.gradle/caches/transforms-2/files-2.1/f46146a770eac87b43c22f9e8df4bfa0/jetified-firebase-auth-21.0.5/AndroidManifest.xml:32:13-72
+228            <intent-filter>
+228-->[com.google.firebase:firebase-auth:21.0.5] /home/alpha/.gradle/caches/transforms-2/files-2.1/f46146a770eac87b43c22f9e8df4bfa0/jetified-firebase-auth-21.0.5/AndroidManifest.xml:33:13-43:29
+229                <action android:name="android.intent.action.VIEW" />
+229-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:22:17-69
+229-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:22:25-66
+230
+231                <category android:name="android.intent.category.DEFAULT" />
+231-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:23:17-76
+231-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:23:27-73
+232                <category android:name="android.intent.category.BROWSABLE" />
+232-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:24:17-78
+232-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:24:27-75
+233
+234                <data
+234-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:25:17-75
+235                    android:host="firebase.auth"
+236                    android:path="/"
+237                    android:scheme="genericidp" />
+237-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:25:23-72
+238            </intent-filter>
+239        </activity>
+240        <activity
+240-->[com.google.firebase:firebase-auth:21.0.5] /home/alpha/.gradle/caches/transforms-2/files-2.1/f46146a770eac87b43c22f9e8df4bfa0/jetified-firebase-auth-21.0.5/AndroidManifest.xml:45:9-62:20
+241            android:name="com.google.firebase.auth.internal.RecaptchaActivity"
+241-->[com.google.firebase:firebase-auth:21.0.5] /home/alpha/.gradle/caches/transforms-2/files-2.1/f46146a770eac87b43c22f9e8df4bfa0/jetified-firebase-auth-21.0.5/AndroidManifest.xml:46:13-79
+242            android:excludeFromRecents="true"
+242-->[com.google.firebase:firebase-auth:21.0.5] /home/alpha/.gradle/caches/transforms-2/files-2.1/f46146a770eac87b43c22f9e8df4bfa0/jetified-firebase-auth-21.0.5/AndroidManifest.xml:47:13-46
+243            android:exported="true"
+243-->[com.google.firebase:firebase-auth:21.0.5] /home/alpha/.gradle/caches/transforms-2/files-2.1/f46146a770eac87b43c22f9e8df4bfa0/jetified-firebase-auth-21.0.5/AndroidManifest.xml:48:13-36
+244            android:launchMode="singleTask"
+244-->[com.google.firebase:firebase-auth:21.0.5] /home/alpha/.gradle/caches/transforms-2/files-2.1/f46146a770eac87b43c22f9e8df4bfa0/jetified-firebase-auth-21.0.5/AndroidManifest.xml:49:13-44
+245            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+245-->[com.google.firebase:firebase-auth:21.0.5] /home/alpha/.gradle/caches/transforms-2/files-2.1/f46146a770eac87b43c22f9e8df4bfa0/jetified-firebase-auth-21.0.5/AndroidManifest.xml:50:13-72
+246            <intent-filter>
+246-->[com.google.firebase:firebase-auth:21.0.5] /home/alpha/.gradle/caches/transforms-2/files-2.1/f46146a770eac87b43c22f9e8df4bfa0/jetified-firebase-auth-21.0.5/AndroidManifest.xml:51:13-61:29
+247                <action android:name="android.intent.action.VIEW" />
+247-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:22:17-69
+247-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:22:25-66
+248
+249                <category android:name="android.intent.category.DEFAULT" />
+249-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:23:17-76
+249-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:23:27-73
+250                <category android:name="android.intent.category.BROWSABLE" />
+250-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:24:17-78
+250-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:24:27-75
+251
+252                <data
+252-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:25:17-75
+253                    android:host="firebase.auth"
+254                    android:path="/"
+255                    android:scheme="recaptcha" />
+255-->/home/alpha/Documents/tecsellent/SrV/android/app/src/main/AndroidManifest.xml:25:23-72
+256            </intent-filter>
+257        </activity>
+258
+259        <provider
+259-->[com.google.firebase:firebase-common:20.1.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/fe6fb754da60a9ef2e2d611d00a222a9/jetified-firebase-common-20.1.1/AndroidManifest.xml:26:9-31:39
+260            android:name="com.google.firebase.provider.FirebaseInitProvider"
+260-->[com.google.firebase:firebase-common:20.1.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/fe6fb754da60a9ef2e2d611d00a222a9/jetified-firebase-common-20.1.1/AndroidManifest.xml:27:13-77
+261            android:authorities="com.tecsellent.srconstruccionvendedor.firebaseinitprovider"
+261-->[com.google.firebase:firebase-common:20.1.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/fe6fb754da60a9ef2e2d611d00a222a9/jetified-firebase-common-20.1.1/AndroidManifest.xml:28:13-72
+262            android:directBootAware="true"
+262-->[com.google.firebase:firebase-common:20.1.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/fe6fb754da60a9ef2e2d611d00a222a9/jetified-firebase-common-20.1.1/AndroidManifest.xml:29:13-43
+263            android:exported="false"
+263-->[com.google.firebase:firebase-common:20.1.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/fe6fb754da60a9ef2e2d611d00a222a9/jetified-firebase-common-20.1.1/AndroidManifest.xml:30:13-37
+264            android:initOrder="100" /> <!-- Needs to be explicitly declared on P+ -->
+264-->[com.google.firebase:firebase-common:20.1.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/fe6fb754da60a9ef2e2d611d00a222a9/jetified-firebase-common-20.1.1/AndroidManifest.xml:31:13-36
+265        <uses-library
+265-->[com.google.android.gms:play-services-maps:17.0.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/6d7990861d297fe38727e0aa9d406ac3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:33:9-35:40
+266            android:name="org.apache.http.legacy"
+266-->[com.google.android.gms:play-services-maps:17.0.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/6d7990861d297fe38727e0aa9d406ac3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:34:13-50
+267            android:required="false" />
+267-->[com.google.android.gms:play-services-maps:17.0.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/6d7990861d297fe38727e0aa9d406ac3/jetified-play-services-maps-17.0.0/AndroidManifest.xml:35:13-37
+268
+269        <activity
+269-->[com.google.android.gms:play-services-auth:16.0.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/2470d20c67ce514f5beebe1d1a21d540/jetified-play-services-auth-16.0.1/AndroidManifest.xml:23:9-27:75
+270            android:name="com.google.android.gms.auth.api.signin.internal.SignInHubActivity"
+270-->[com.google.android.gms:play-services-auth:16.0.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/2470d20c67ce514f5beebe1d1a21d540/jetified-play-services-auth-16.0.1/AndroidManifest.xml:24:13-93
+271            android:excludeFromRecents="true"
+271-->[com.google.android.gms:play-services-auth:16.0.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/2470d20c67ce514f5beebe1d1a21d540/jetified-play-services-auth-16.0.1/AndroidManifest.xml:25:13-46
+272            android:exported="false"
+272-->[com.google.android.gms:play-services-auth:16.0.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/2470d20c67ce514f5beebe1d1a21d540/jetified-play-services-auth-16.0.1/AndroidManifest.xml:26:13-37
+273            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+273-->[com.google.android.gms:play-services-auth:16.0.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/2470d20c67ce514f5beebe1d1a21d540/jetified-play-services-auth-16.0.1/AndroidManifest.xml:27:13-72
+274        <!--
+275            Service handling Google Sign-In user revocation. For apps that do not integrate with
+276            Google Sign-In, this service will never be started.
+277        -->
+278        <service
+278-->[com.google.android.gms:play-services-auth:16.0.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/2470d20c67ce514f5beebe1d1a21d540/jetified-play-services-auth-16.0.1/AndroidManifest.xml:33:9-36:110
+279            android:name="com.google.android.gms.auth.api.signin.RevocationBoundService"
+279-->[com.google.android.gms:play-services-auth:16.0.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/2470d20c67ce514f5beebe1d1a21d540/jetified-play-services-auth-16.0.1/AndroidManifest.xml:34:13-89
+280            android:exported="true"
+280-->[com.google.android.gms:play-services-auth:16.0.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/2470d20c67ce514f5beebe1d1a21d540/jetified-play-services-auth-16.0.1/AndroidManifest.xml:35:13-36
+281            android:permission="com.google.android.gms.auth.api.signin.permission.REVOCATION_NOTIFICATION" />
+281-->[com.google.android.gms:play-services-auth:16.0.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/2470d20c67ce514f5beebe1d1a21d540/jetified-play-services-auth-16.0.1/AndroidManifest.xml:36:13-107
+282
+283        <activity
+283-->[com.google.android.gms:play-services-base:18.0.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/7ba56569a9efbc0fa9acacc5890907b8/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+284            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+284-->[com.google.android.gms:play-services-base:18.0.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/7ba56569a9efbc0fa9acacc5890907b8/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+285            android:exported="false"
+285-->[com.google.android.gms:play-services-base:18.0.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/7ba56569a9efbc0fa9acacc5890907b8/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+286            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+286-->[com.google.android.gms:play-services-base:18.0.1] /home/alpha/.gradle/caches/transforms-2/files-2.1/7ba56569a9efbc0fa9acacc5890907b8/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+287
+288        <meta-data
+288-->[com.google.android.gms:play-services-basement:18.0.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/e41f70889c49c6a9c8f9330d7d80c5da/jetified-play-services-basement-18.0.0/AndroidManifest.xml:21:9-23:69
+289            android:name="com.google.android.gms.version"
+289-->[com.google.android.gms:play-services-basement:18.0.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/e41f70889c49c6a9c8f9330d7d80c5da/jetified-play-services-basement-18.0.0/AndroidManifest.xml:22:13-58
+290            android:value="@integer/google_play_services_version" />
+290-->[com.google.android.gms:play-services-basement:18.0.0] /home/alpha/.gradle/caches/transforms-2/files-2.1/e41f70889c49c6a9c8f9330d7d80c5da/jetified-play-services-basement-18.0.0/AndroidManifest.xml:23:13-66
+291    </application>
+292
+293</manifest>

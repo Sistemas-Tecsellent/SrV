@@ -1,0 +1,74 @@
+[
+    {
+        "merged": "/home/alpha/Documents/tecsellent/SrV/build/google_sign_in/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light.xml",
+        "source": "/home/alpha/.gradle/caches/transforms-2/files-2.1/852363f8d050ee089243b831de3a7d6a/jetified-play-services-base-16.0.1/res/drawable/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/home/alpha/Documents/tecsellent/SrV/build/google_sign_in/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light_focused.xml",
+        "source": "/home/alpha/.gradle/caches/transforms-2/files-2.1/852363f8d050ee089243b831de3a7d6a/jetified-play-services-base-16.0.1/res/drawable/common_google_signin_btn_icon_light_focused.xml"
+    },
+    {
+        "merged": "/home/alpha/Documents/tecsellent/SrV/build/google_sign_in/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light.xml",
+        "source": "/home/alpha/.gradle/caches/transforms-2/files-2.1/852363f8d050ee089243b831de3a7d6a/jetified-play-services-base-16.0.1/res/drawable/common_google_signin_btn_icon_light.xml"
+    },
+    {
+        "merged": "/home/alpha/Documents/tecsellent/SrV/build/google_sign_in/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark.xml",
+        "source": "/home/alpha/.gradle/caches/transforms-2/files-2.1/852363f8d050ee089243b831de3a7d6a/jetified-play-services-base-16.0.1/res/drawable/common_google_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "/home/alpha/Documents/tecsellent/SrV/build/google_sign_in/intermediates/res/merged/debug/drawable/notification_icon_background.xml",
+        "source": "/home/alpha/.gradle/caches/transforms-2/files-2.1/ffa170e1659e3ee0300d2d5a1cf02a72/core-1.6.0/res/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "/home/alpha/Documents/tecsellent/SrV/build/google_sign_in/intermediates/res/merged/debug/drawable/notification_bg_low.xml",
+        "source": "/home/alpha/.gradle/caches/transforms-2/files-2.1/ffa170e1659e3ee0300d2d5a1cf02a72/core-1.6.0/res/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "/home/alpha/Documents/tecsellent/SrV/build/google_sign_in/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_light_normal.xml",
+        "source": "/home/alpha/.gradle/caches/transforms-2/files-2.1/852363f8d050ee089243b831de3a7d6a/jetified-play-services-base-16.0.1/res/drawable/common_google_signin_btn_icon_light_normal.xml"
+    },
+    {
+        "merged": "/home/alpha/Documents/tecsellent/SrV/build/google_sign_in/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark_focused.xml",
+        "source": "/home/alpha/.gradle/caches/transforms-2/files-2.1/852363f8d050ee089243b831de3a7d6a/jetified-play-services-base-16.0.1/res/drawable/common_google_signin_btn_icon_dark_focused.xml"
+    },
+    {
+        "merged": "/home/alpha/Documents/tecsellent/SrV/build/google_sign_in/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_disabled.xml",
+        "source": "/home/alpha/.gradle/caches/transforms-2/files-2.1/852363f8d050ee089243b831de3a7d6a/jetified-play-services-base-16.0.1/res/drawable/common_google_signin_btn_icon_disabled.xml"
+    },
+    {
+        "merged": "/home/alpha/Documents/tecsellent/SrV/build/google_sign_in/intermediates/res/merged/debug/drawable/common_google_signin_btn_icon_dark_normal.xml",
+        "source": "/home/alpha/.gradle/caches/transforms-2/files-2.1/852363f8d050ee089243b831de3a7d6a/jetified-play-services-base-16.0.1/res/drawable/common_google_signin_btn_icon_dark_normal.xml"
+    },
+    {
+        "merged": "/home/alpha/Documents/tecsellent/SrV/build/google_sign_in/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light_normal.xml",
+        "source": "/home/alpha/.gradle/caches/transforms-2/files-2.1/852363f8d050ee089243b831de3a7d6a/jetified-play-services-base-16.0.1/res/drawable/common_google_signin_btn_text_light_normal.xml"
+    },
+    {
+        "merged": "/home/alpha/Documents/tecsellent/SrV/build/google_sign_in/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark.xml",
+        "source": "/home/alpha/.gradle/caches/transforms-2/files-2.1/852363f8d050ee089243b831de3a7d6a/jetified-play-services-base-16.0.1/res/drawable/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/home/alpha/Documents/tecsellent/SrV/build/google_sign_in/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark_focused.xml",
+        "source": "/home/alpha/.gradle/caches/transforms-2/files-2.1/852363f8d050ee089243b831de3a7d6a/jetified-play-services-base-16.0.1/res/drawable/common_google_signin_btn_text_dark_focused.xml"
+    },
+    {
+        "merged": "/home/alpha/Documents/tecsellent/SrV/build/google_sign_in/intermediates/res/merged/debug/drawable/notification_tile_bg.xml",
+        "source": "/home/alpha/.gradle/caches/transforms-2/files-2.1/ffa170e1659e3ee0300d2d5a1cf02a72/core-1.6.0/res/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "/home/alpha/Documents/tecsellent/SrV/build/google_sign_in/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_disabled.xml",
+        "source": "/home/alpha/.gradle/caches/transforms-2/files-2.1/852363f8d050ee089243b831de3a7d6a/jetified-play-services-base-16.0.1/res/drawable/common_google_signin_btn_text_disabled.xml"
+    },
+    {
+        "merged": "/home/alpha/Documents/tecsellent/SrV/build/google_sign_in/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_light_focused.xml",
+        "source": "/home/alpha/.gradle/caches/transforms-2/files-2.1/852363f8d050ee089243b831de3a7d6a/jetified-play-services-base-16.0.1/res/drawable/common_google_signin_btn_text_light_focused.xml"
+    },
+    {
+        "merged": "/home/alpha/Documents/tecsellent/SrV/build/google_sign_in/intermediates/res/merged/debug/drawable/common_google_signin_btn_text_dark_normal.xml",
+        "source": "/home/alpha/.gradle/caches/transforms-2/files-2.1/852363f8d050ee089243b831de3a7d6a/jetified-play-services-base-16.0.1/res/drawable/common_google_signin_btn_text_dark_normal.xml"
+    },
+    {
+        "merged": "/home/alpha/Documents/tecsellent/SrV/build/google_sign_in/intermediates/res/merged/debug/drawable/notification_bg.xml",
+        "source": "/home/alpha/.gradle/caches/transforms-2/files-2.1/ffa170e1659e3ee0300d2d5a1cf02a72/core-1.6.0/res/drawable/notification_bg.xml"
+    }
+]
