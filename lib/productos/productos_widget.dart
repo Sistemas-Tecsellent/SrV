@@ -1442,7 +1442,7 @@ class _ProductosWidgetState extends State<ProductosWidget> {
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(55555555555555560000, 0, 0, 0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                                                                                   child: Text(
                                                                                     'Stock',
                                                                                     style: FlutterFlowTheme.of(context).bodyText1.override(
