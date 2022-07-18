@@ -326,6 +326,9 @@ class _DatosBancariosWidgetState extends State<DatosBancariosWidget> {
                                 child: Container(
                                   width:
                                       MediaQuery.of(context).size.width * 0.9,
+                                  constraints: BoxConstraints(
+                                    maxWidth: 500,
+                                  ),
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
                                         .secondaryBackground,

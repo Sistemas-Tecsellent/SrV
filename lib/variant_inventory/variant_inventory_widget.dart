@@ -6,6 +6,7 @@ import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
 import '../custom_code/actions/index.dart' as actions;
+import '../flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -43,29 +44,29 @@ class VariantInventoryWidget extends StatefulWidget {
 
 class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
   String updateResponse;
-  TextEditingController textController2;
-  bool megaWholesalePriceSwitchValue2;
-  bool publicPriceSwitchValue2;
-  bool wholesalePriceSwitchValue2;
-  bool discount1EnabledDesktValue;
-  bool discount2EnabledValue2;
-  bool discount3EnabledValue2;
-  String updateResponses;
-  TextEditingController textController1;
-  bool megaWholesalePriceSwitchValue1;
-  bool publicPriceSwitchValue1;
-  bool wholesalePriceSwitchValue1;
+  TextEditingController inventoryWebController;
+  bool megaWholesalePriceSwitchValue;
+  bool publicPriceSwitchValue;
+  bool wholesalePriceSwitchValue;
   bool discount1EnabledValue;
-  bool discount2EnabledValue1;
-  bool discount3EnabledValue1;
+  bool discount2EnabledValue;
+  bool discount3EnabledDesktValue;
+  String updateResponses;
+  TextEditingController inventoryMobileController;
+  bool megaWholesalePriceSwitchMobileValue;
+  bool publicPriceSwitchMobileValue;
+  bool wholesalePriceSwitchMobileValue;
+  bool discount1EnabledMobileValue;
+  bool discount2EnabledMobileValue;
+  bool discount3EnabledMobileValue;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    textController1 =
+    inventoryMobileController =
         TextEditingController(text: widget.initialInventory.toString());
-    textController2 =
+    inventoryWebController =
         TextEditingController(text: widget.initialInventory.toString());
   }
 
@@ -333,7 +334,7 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                                             child:
                                                                 TextFormField(
                                                               controller:
-                                                                  textController1,
+                                                                  inventoryMobileController,
                                                               obscureText:
                                                                   false,
                                                               decoration:
@@ -443,12 +444,12 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                                                     BoxDecoration(),
                                                                 child:
                                                                     SwitchListTile(
-                                                                  value: publicPriceSwitchValue1 ??=
+                                                                  value: publicPriceSwitchMobileValue ??=
                                                                       widget
                                                                           .publicPriceEnabled,
                                                                   onChanged: (newValue) =>
                                                                       setState(() =>
-                                                                          publicPriceSwitchValue1 =
+                                                                          publicPriceSwitchMobileValue =
                                                                               newValue),
                                                                   title: Text(
                                                                     'Precio Publico',
@@ -511,12 +512,12 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                                                     BoxDecoration(),
                                                                 child:
                                                                     SwitchListTile(
-                                                                  value: wholesalePriceSwitchValue1 ??=
+                                                                  value: wholesalePriceSwitchMobileValue ??=
                                                                       widget
                                                                           .wholesalePriceEnabled,
                                                                   onChanged: (newValue) =>
                                                                       setState(() =>
-                                                                          wholesalePriceSwitchValue1 =
+                                                                          wholesalePriceSwitchMobileValue =
                                                                               newValue),
                                                                   title: Text(
                                                                     'Precio Mayoreo',
@@ -582,12 +583,12 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                                                     BoxDecoration(),
                                                                 child:
                                                                     SwitchListTile(
-                                                                  value: megaWholesalePriceSwitchValue1 ??=
+                                                                  value: megaWholesalePriceSwitchMobileValue ??=
                                                                       widget
                                                                           .megaWholesalePriceEnabled,
                                                                   onChanged: (newValue) =>
                                                                       setState(() =>
-                                                                          megaWholesalePriceSwitchValue1 =
+                                                                          megaWholesalePriceSwitchMobileValue =
                                                                               newValue),
                                                                   title: Text(
                                                                     'Precio Mega Mayoreo',
@@ -707,156 +708,203 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                                                         MainAxisAlignment
                                                                             .center,
                                                                     children: [
-                                                                      Container(
-                                                                        width: MediaQuery.of(context).size.width *
-                                                                            0.9,
-                                                                        constraints:
-                                                                            BoxConstraints(
-                                                                          maxWidth:
-                                                                              350,
-                                                                        ),
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              Colors.white,
-                                                                          boxShadow: [
-                                                                            BoxShadow(
-                                                                              blurRadius: 10,
-                                                                              color: Color(0x0D000000),
-                                                                            )
-                                                                          ],
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(5),
-                                                                        ),
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              20,
-                                                                              0,
-                                                                              20,
-                                                                              20),
-                                                                          child:
-                                                                              Column(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
-                                                                            crossAxisAlignment:
-                                                                                CrossAxisAlignment.start,
-                                                                            children: [
-                                                                              SwitchListTile(
-                                                                                value: discount3EnabledValue1 ??= widget.discount1Enabled,
-                                                                                onChanged: (newValue) => setState(() => discount3EnabledValue1 = newValue),
-                                                                                title: Text(
-                                                                                  '${valueOrDefault<String>(
-                                                                                    formatNumber(
-                                                                                      columnVariantsRecord.discount3,
-                                                                                      formatType: FormatType.percent,
-                                                                                    ),
-                                                                                    '0',
-                                                                                  )} OFF',
-                                                                                  textAlign: TextAlign.center,
-                                                                                  style: FlutterFlowTheme.of(context).subtitle1.override(
-                                                                                        fontFamily: 'Montserrat',
-                                                                                        color: Color(0xFF47DA86),
+                                                                      Stack(
+                                                                        alignment: AlignmentDirectional(
+                                                                            1,
+                                                                            0),
+                                                                        children: [
+                                                                          Container(
+                                                                            width:
+                                                                                MediaQuery.of(context).size.width * 0.9,
+                                                                            constraints:
+                                                                                BoxConstraints(
+                                                                              maxWidth: 350,
+                                                                            ),
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              color: Colors.white,
+                                                                              boxShadow: [
+                                                                                BoxShadow(
+                                                                                  blurRadius: 10,
+                                                                                  color: Color(0x0D000000),
+                                                                                )
+                                                                              ],
+                                                                              borderRadius: BorderRadius.circular(5),
+                                                                            ),
+                                                                            child:
+                                                                                Visibility(
+                                                                              visible: (columnVariantsRecord.discountRange1) > 0,
+                                                                              child: Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 20),
+                                                                                child: Column(
+                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                  children: [
+                                                                                    SwitchListTile(
+                                                                                      value: discount1EnabledMobileValue ??= widget.discount1Enabled,
+                                                                                      onChanged: (newValue) => setState(() => discount1EnabledMobileValue = newValue),
+                                                                                      title: Text(
+                                                                                        '${valueOrDefault<String>(
+                                                                                          formatNumber(
+                                                                                            columnVariantsRecord.discount1,
+                                                                                            formatType: FormatType.percent,
+                                                                                          ),
+                                                                                          '0',
+                                                                                        )} OFF',
+                                                                                        textAlign: TextAlign.center,
+                                                                                        style: FlutterFlowTheme.of(context).subtitle1.override(
+                                                                                              fontFamily: 'Montserrat',
+                                                                                              color: Color(0xFF47DA86),
+                                                                                            ),
                                                                                       ),
-                                                                                ),
-                                                                                subtitle: Text(
-                                                                                  '${valueOrDefault<String>(
-                                                                                    columnVariantsRecord.discountRange2.toString(),
-                                                                                    '0',
-                                                                                  )} - ${valueOrDefault<String>(
-                                                                                    columnVariantsRecord.discountRange3.toString(),
-                                                                                    '0',
-                                                                                  )}${valueOrDefault<String>(
-                                                                                    columnVariantsRecord.unit,
-                                                                                    'unidades',
-                                                                                  )}',
-                                                                                  textAlign: TextAlign.center,
-                                                                                  style: FlutterFlowTheme.of(context).subtitle2.override(
-                                                                                        fontFamily: 'Montserrat',
-                                                                                        color: Color(0xFF656565),
-                                                                                        fontSize: 13,
-                                                                                        fontWeight: FontWeight.normal,
+                                                                                      subtitle: Text(
+                                                                                        '1 - ${valueOrDefault<String>(
+                                                                                          columnVariantsRecord.discountRange1.toString(),
+                                                                                          '0',
+                                                                                        )}  ${columnVariantsRecord.unit}',
+                                                                                        textAlign: TextAlign.center,
+                                                                                        style: FlutterFlowTheme.of(context).subtitle2.override(
+                                                                                              fontFamily: 'Montserrat',
+                                                                                              color: Color(0xFF656565),
+                                                                                              fontSize: 13,
+                                                                                              fontWeight: FontWeight.normal,
+                                                                                            ),
                                                                                       ),
+                                                                                      activeColor: Color(0xFF47DA86),
+                                                                                      dense: false,
+                                                                                      controlAffinity: ListTileControlAffinity.trailing,
+                                                                                    ),
+                                                                                    if (responsiveVisibility(
+                                                                                      context: context,
+                                                                                      phone: false,
+                                                                                      tablet: false,
+                                                                                      tabletLandscape: false,
+                                                                                      desktop: false,
+                                                                                    ))
+                                                                                      Text(
+                                                                                        'Tu recibes',
+                                                                                        style: FlutterFlowTheme.of(context).bodyText1,
+                                                                                      ),
+                                                                                    if (responsiveVisibility(
+                                                                                      context: context,
+                                                                                      phone: false,
+                                                                                      tablet: false,
+                                                                                      tabletLandscape: false,
+                                                                                      desktop: false,
+                                                                                    ))
+                                                                                      Row(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        children: [
+                                                                                          Text(
+                                                                                            'Precio Público',
+                                                                                            style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                                  fontFamily: 'Montserrat',
+                                                                                                  fontWeight: FontWeight.normal,
+                                                                                                ),
+                                                                                          ),
+                                                                                          Padding(
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                                                            child: Text(
+                                                                                              '\$75',
+                                                                                              style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                                    fontFamily: 'Montserrat',
+                                                                                                    color: Color(0xFF47DA86),
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                    if (responsiveVisibility(
+                                                                                      context: context,
+                                                                                      phone: false,
+                                                                                      tablet: false,
+                                                                                      tabletLandscape: false,
+                                                                                      desktop: false,
+                                                                                    ))
+                                                                                      Row(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        children: [
+                                                                                          Text(
+                                                                                            'Precio Mayoreo',
+                                                                                            style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                                  fontFamily: 'Montserrat',
+                                                                                                  fontWeight: FontWeight.normal,
+                                                                                                ),
+                                                                                          ),
+                                                                                          Padding(
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                                                            child: Text(
+                                                                                              '\$55',
+                                                                                              style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                                    fontFamily: 'Montserrat',
+                                                                                                    color: Color(0xFF47DA86),
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                    if (responsiveVisibility(
+                                                                                      context: context,
+                                                                                      phone: false,
+                                                                                      tablet: false,
+                                                                                      tabletLandscape: false,
+                                                                                      desktop: false,
+                                                                                    ))
+                                                                                      Row(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        children: [
+                                                                                          Text(
+                                                                                            'Precio Mega Mayoreo',
+                                                                                            style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                                  fontFamily: 'Montserrat',
+                                                                                                  fontWeight: FontWeight.normal,
+                                                                                                ),
+                                                                                          ),
+                                                                                          Padding(
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                                                            child: Text(
+                                                                                              '\$35',
+                                                                                              style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                                    fontFamily: 'Montserrat',
+                                                                                                    color: Color(0xFF47DA86),
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                  ],
                                                                                 ),
-                                                                                activeColor: Color(0xFF47DA86),
-                                                                                dense: false,
-                                                                                controlAffinity: ListTileControlAffinity.trailing,
                                                                               ),
-                                                                              Text(
-                                                                                'Tu recibes',
-                                                                                style: FlutterFlowTheme.of(context).bodyText1,
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Text(
-                                                                                    'Precio Público',
-                                                                                    style: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                          fontFamily: 'Montserrat',
-                                                                                          fontWeight: FontWeight.normal,
-                                                                                        ),
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                                                                                    child: Text(
-                                                                                      '\$75',
-                                                                                      style: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                            fontFamily: 'Montserrat',
-                                                                                            color: Color(0xFF47DA86),
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Text(
-                                                                                    'Precio Mayoreo',
-                                                                                    style: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                          fontFamily: 'Montserrat',
-                                                                                          fontWeight: FontWeight.normal,
-                                                                                        ),
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                                                                                    child: Text(
-                                                                                      '\$55',
-                                                                                      style: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                            fontFamily: 'Montserrat',
-                                                                                            color: Color(0xFF47DA86),
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Text(
-                                                                                    'Precio Mega Mayoreo',
-                                                                                    style: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                          fontFamily: 'Montserrat',
-                                                                                          fontWeight: FontWeight.normal,
-                                                                                        ),
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                                                                                    child: Text(
-                                                                                      '\$35',
-                                                                                      style: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                            fontFamily: 'Montserrat',
-                                                                                            color: Color(0xFF47DA86),
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ],
+                                                                            ),
                                                                           ),
-                                                                        ),
+                                                                          if (functions.isLessThan(int.parse(inventoryMobileController.text), columnVariantsRecord.discountRange1) ??
+                                                                              true)
+                                                                            InkWell(
+                                                                              onTap: () async {
+                                                                                await showDialog(
+                                                                                  context: context,
+                                                                                  builder: (alertDialogContext) {
+                                                                                    return AlertDialog(
+                                                                                      title: Text('Atención'),
+                                                                                      content: Text('Debes tener suficientes productos en inventario para activar este descuento.'),
+                                                                                      actions: [
+                                                                                        TextButton(
+                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                          child: Text('Ok'),
+                                                                                        ),
+                                                                                      ],
+                                                                                    );
+                                                                                  },
+                                                                                );
+                                                                              },
+                                                                              child: Container(
+                                                                                width: 200,
+                                                                                height: 55,
+                                                                                decoration: BoxDecoration(),
+                                                                              ),
+                                                                            ),
+                                                                        ],
                                                                       ),
                                                                     ],
                                                                   ),
@@ -876,154 +924,206 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                                                         MainAxisAlignment
                                                                             .center,
                                                                     children: [
-                                                                      Container(
-                                                                        width: MediaQuery.of(context).size.width *
-                                                                            0.9,
-                                                                        constraints:
-                                                                            BoxConstraints(
-                                                                          maxWidth:
-                                                                              350,
-                                                                        ),
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              Colors.white,
-                                                                          boxShadow: [
-                                                                            BoxShadow(
-                                                                              blurRadius: 10,
-                                                                              color: Color(0x0D000000),
-                                                                            )
-                                                                          ],
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(5),
-                                                                        ),
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              20,
-                                                                              0,
-                                                                              20,
-                                                                              20),
-                                                                          child:
-                                                                              Column(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
-                                                                            crossAxisAlignment:
-                                                                                CrossAxisAlignment.start,
-                                                                            children: [
-                                                                              SwitchListTile(
-                                                                                value: discount2EnabledValue1 ??= widget.discount2Enabled,
-                                                                                onChanged: (newValue) => setState(() => discount2EnabledValue1 = newValue),
-                                                                                title: Text(
-                                                                                  '${valueOrDefault<String>(
-                                                                                    formatNumber(
-                                                                                      columnVariantsRecord.discount2,
-                                                                                      formatType: FormatType.percent,
-                                                                                    ),
-                                                                                    '0',
-                                                                                  )} OFF',
-                                                                                  textAlign: TextAlign.center,
-                                                                                  style: FlutterFlowTheme.of(context).subtitle1.override(
-                                                                                        fontFamily: 'Montserrat',
-                                                                                        color: Color(0xFF47DA86),
-                                                                                        fontSize: 20,
+                                                                      Stack(
+                                                                        alignment: AlignmentDirectional(
+                                                                            1,
+                                                                            0),
+                                                                        children: [
+                                                                          Container(
+                                                                            width:
+                                                                                MediaQuery.of(context).size.width * 0.9,
+                                                                            constraints:
+                                                                                BoxConstraints(
+                                                                              maxWidth: 350,
+                                                                            ),
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              color: Colors.white,
+                                                                              boxShadow: [
+                                                                                BoxShadow(
+                                                                                  blurRadius: 10,
+                                                                                  color: Color(0x0D000000),
+                                                                                )
+                                                                              ],
+                                                                              borderRadius: BorderRadius.circular(5),
+                                                                            ),
+                                                                            child:
+                                                                                Visibility(
+                                                                              visible: (columnVariantsRecord.discountRange2) > 0,
+                                                                              child: Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 20),
+                                                                                child: Column(
+                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                  children: [
+                                                                                    SwitchListTile(
+                                                                                      value: discount2EnabledMobileValue ??= widget.discount2Enabled,
+                                                                                      onChanged: (newValue) => setState(() => discount2EnabledMobileValue = newValue),
+                                                                                      title: Text(
+                                                                                        '${valueOrDefault<String>(
+                                                                                          formatNumber(
+                                                                                            columnVariantsRecord.discount2,
+                                                                                            formatType: FormatType.percent,
+                                                                                          ),
+                                                                                          '0',
+                                                                                        )} OFF',
+                                                                                        textAlign: TextAlign.center,
+                                                                                        style: FlutterFlowTheme.of(context).subtitle1.override(
+                                                                                              fontFamily: 'Montserrat',
+                                                                                              color: Color(0xFF47DA86),
+                                                                                              fontSize: 20,
+                                                                                            ),
                                                                                       ),
-                                                                                ),
-                                                                                subtitle: Text(
-                                                                                  '${valueOrDefault<String>(
-                                                                                    columnVariantsRecord.discountRange1.toString(),
-                                                                                    '0',
-                                                                                  )} - ${valueOrDefault<String>(
-                                                                                    columnVariantsRecord.discountRange2.toString(),
-                                                                                    '0',
-                                                                                  )}${columnVariantsRecord.unit}',
-                                                                                  textAlign: TextAlign.center,
-                                                                                  style: FlutterFlowTheme.of(context).subtitle2.override(
-                                                                                        fontFamily: 'Montserrat',
-                                                                                        color: Color(0xFF656565),
-                                                                                        fontSize: 13,
-                                                                                        fontWeight: FontWeight.normal,
+                                                                                      subtitle: Text(
+                                                                                        '${valueOrDefault<String>(
+                                                                                          columnVariantsRecord.discountRange1.toString(),
+                                                                                          '0',
+                                                                                        )} - ${valueOrDefault<String>(
+                                                                                          columnVariantsRecord.discountRange2.toString(),
+                                                                                          '0',
+                                                                                        )}  ${columnVariantsRecord.unit}',
+                                                                                        textAlign: TextAlign.center,
+                                                                                        style: FlutterFlowTheme.of(context).subtitle2.override(
+                                                                                              fontFamily: 'Montserrat',
+                                                                                              color: Color(0xFF656565),
+                                                                                              fontSize: 13,
+                                                                                              fontWeight: FontWeight.normal,
+                                                                                            ),
                                                                                       ),
+                                                                                      activeColor: Color(0xFF47DA86),
+                                                                                      dense: false,
+                                                                                      controlAffinity: ListTileControlAffinity.trailing,
+                                                                                    ),
+                                                                                    if (responsiveVisibility(
+                                                                                      context: context,
+                                                                                      phone: false,
+                                                                                      tablet: false,
+                                                                                      tabletLandscape: false,
+                                                                                      desktop: false,
+                                                                                    ))
+                                                                                      Text(
+                                                                                        'Tu recibes',
+                                                                                        style: FlutterFlowTheme.of(context).bodyText1,
+                                                                                      ),
+                                                                                    if (responsiveVisibility(
+                                                                                      context: context,
+                                                                                      phone: false,
+                                                                                      tablet: false,
+                                                                                      tabletLandscape: false,
+                                                                                      desktop: false,
+                                                                                    ))
+                                                                                      Row(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        children: [
+                                                                                          Text(
+                                                                                            'Precio Público',
+                                                                                            style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                                  fontFamily: 'Montserrat',
+                                                                                                  fontWeight: FontWeight.normal,
+                                                                                                ),
+                                                                                          ),
+                                                                                          Padding(
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                                                            child: Text(
+                                                                                              '\$80',
+                                                                                              style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                                    fontFamily: 'Montserrat',
+                                                                                                    color: Color(0xFF47DA86),
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                    if (responsiveVisibility(
+                                                                                      context: context,
+                                                                                      phone: false,
+                                                                                      tablet: false,
+                                                                                      tabletLandscape: false,
+                                                                                      desktop: false,
+                                                                                    ))
+                                                                                      Row(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        children: [
+                                                                                          Text(
+                                                                                            'Precio Mayoreo',
+                                                                                            style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                                  fontFamily: 'Montserrat',
+                                                                                                  fontWeight: FontWeight.normal,
+                                                                                                ),
+                                                                                          ),
+                                                                                          Padding(
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                                                            child: Text(
+                                                                                              '\$60',
+                                                                                              style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                                    fontFamily: 'Montserrat',
+                                                                                                    color: Color(0xFF47DA86),
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                    if (responsiveVisibility(
+                                                                                      context: context,
+                                                                                      phone: false,
+                                                                                      tablet: false,
+                                                                                      desktop: false,
+                                                                                    ))
+                                                                                      Row(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        children: [
+                                                                                          Text(
+                                                                                            'Precio Mega Mayoreo',
+                                                                                            style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                                  fontFamily: 'Montserrat',
+                                                                                                  fontWeight: FontWeight.normal,
+                                                                                                ),
+                                                                                          ),
+                                                                                          Padding(
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                                                            child: Text(
+                                                                                              '\$40',
+                                                                                              style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                                    fontFamily: 'Montserrat',
+                                                                                                    color: Color(0xFF47DA86),
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                  ],
                                                                                 ),
-                                                                                activeColor: Color(0xFF47DA86),
-                                                                                dense: false,
-                                                                                controlAffinity: ListTileControlAffinity.trailing,
                                                                               ),
-                                                                              Text(
-                                                                                'Tu recibes',
-                                                                                style: FlutterFlowTheme.of(context).bodyText1,
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Text(
-                                                                                    'Precio Público',
-                                                                                    style: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                          fontFamily: 'Montserrat',
-                                                                                          fontWeight: FontWeight.normal,
-                                                                                        ),
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                                                                                    child: Text(
-                                                                                      '\$80',
-                                                                                      style: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                            fontFamily: 'Montserrat',
-                                                                                            color: Color(0xFF47DA86),
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Text(
-                                                                                    'Precio Mayoreo',
-                                                                                    style: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                          fontFamily: 'Montserrat',
-                                                                                          fontWeight: FontWeight.normal,
-                                                                                        ),
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                                                                                    child: Text(
-                                                                                      '\$60',
-                                                                                      style: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                            fontFamily: 'Montserrat',
-                                                                                            color: Color(0xFF47DA86),
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Text(
-                                                                                    'Precio Mega Mayoreo',
-                                                                                    style: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                          fontFamily: 'Montserrat',
-                                                                                          fontWeight: FontWeight.normal,
-                                                                                        ),
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                                                                                    child: Text(
-                                                                                      '\$40',
-                                                                                      style: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                            fontFamily: 'Montserrat',
-                                                                                            color: Color(0xFF47DA86),
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ],
+                                                                            ),
                                                                           ),
-                                                                        ),
+                                                                          if (functions.isLessThan(int.parse(inventoryMobileController.text), columnVariantsRecord.discountRange2) ??
+                                                                              true)
+                                                                            InkWell(
+                                                                              onTap: () async {
+                                                                                await showDialog(
+                                                                                  context: context,
+                                                                                  builder: (alertDialogContext) {
+                                                                                    return AlertDialog(
+                                                                                      title: Text('Atención'),
+                                                                                      content: Text('Debes tener suficientes productos en inventario para activar este descuento.'),
+                                                                                      actions: [
+                                                                                        TextButton(
+                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                          child: Text('Ok'),
+                                                                                        ),
+                                                                                      ],
+                                                                                    );
+                                                                                  },
+                                                                                );
+                                                                              },
+                                                                              child: Container(
+                                                                                width: 200,
+                                                                                height: 55,
+                                                                                decoration: BoxDecoration(),
+                                                                              ),
+                                                                            ),
+                                                                        ],
                                                                       ),
                                                                     ],
                                                                   ),
@@ -1043,151 +1143,204 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                                                         MainAxisAlignment
                                                                             .center,
                                                                     children: [
-                                                                      Container(
-                                                                        width: MediaQuery.of(context).size.width *
-                                                                            0.9,
-                                                                        constraints:
-                                                                            BoxConstraints(
-                                                                          maxWidth:
-                                                                              350,
-                                                                        ),
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              Colors.white,
-                                                                          boxShadow: [
-                                                                            BoxShadow(
-                                                                              blurRadius: 10,
-                                                                              color: Color(0x0D000000),
-                                                                            )
-                                                                          ],
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(5),
-                                                                        ),
-                                                                        child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              20,
-                                                                              0,
-                                                                              20,
-                                                                              20),
-                                                                          child:
-                                                                              Column(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
-                                                                            crossAxisAlignment:
-                                                                                CrossAxisAlignment.start,
-                                                                            children: [
-                                                                              SwitchListTile(
-                                                                                value: discount1EnabledValue ??= widget.discount1Enabled,
-                                                                                onChanged: (newValue) => setState(() => discount1EnabledValue = newValue),
-                                                                                title: Text(
-                                                                                  '${valueOrDefault<String>(
-                                                                                    formatNumber(
-                                                                                      columnVariantsRecord.discount1,
-                                                                                      formatType: FormatType.percent,
-                                                                                    ),
-                                                                                    '0',
-                                                                                  )} OFF',
-                                                                                  textAlign: TextAlign.center,
-                                                                                  style: FlutterFlowTheme.of(context).subtitle1.override(
-                                                                                        fontFamily: 'Montserrat',
-                                                                                        color: Color(0xFF47DA86),
-                                                                                        fontSize: 20,
+                                                                      Stack(
+                                                                        children: [
+                                                                          Container(
+                                                                            width:
+                                                                                MediaQuery.of(context).size.width * 0.9,
+                                                                            constraints:
+                                                                                BoxConstraints(
+                                                                              maxWidth: 350,
+                                                                            ),
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              color: Colors.white,
+                                                                              boxShadow: [
+                                                                                BoxShadow(
+                                                                                  blurRadius: 10,
+                                                                                  color: Color(0x0D000000),
+                                                                                )
+                                                                              ],
+                                                                              borderRadius: BorderRadius.circular(5),
+                                                                            ),
+                                                                            child:
+                                                                                Visibility(
+                                                                              visible: (columnVariantsRecord.discountRange3) > 0,
+                                                                              child: Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(20, 0, 20, 20),
+                                                                                child: Column(
+                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                  children: [
+                                                                                    SwitchListTile(
+                                                                                      value: discount3EnabledMobileValue ??= widget.discount3Enabled,
+                                                                                      onChanged: (newValue) => setState(() => discount3EnabledMobileValue = newValue),
+                                                                                      title: Text(
+                                                                                        '${valueOrDefault<String>(
+                                                                                          formatNumber(
+                                                                                            columnVariantsRecord.discount3,
+                                                                                            formatType: FormatType.percent,
+                                                                                          ),
+                                                                                          '0',
+                                                                                        )} OFF',
+                                                                                        textAlign: TextAlign.center,
+                                                                                        style: FlutterFlowTheme.of(context).subtitle1.override(
+                                                                                              fontFamily: 'Montserrat',
+                                                                                              color: Color(0xFF47DA86),
+                                                                                              fontSize: 20,
+                                                                                            ),
                                                                                       ),
-                                                                                ),
-                                                                                subtitle: Text(
-                                                                                  '1 - ${valueOrDefault<String>(
-                                                                                    columnVariantsRecord.discountRange1.toString(),
-                                                                                    '0',
-                                                                                  )}${columnVariantsRecord.unit}',
-                                                                                  textAlign: TextAlign.center,
-                                                                                  style: FlutterFlowTheme.of(context).subtitle2.override(
-                                                                                        fontFamily: 'Montserrat',
-                                                                                        color: Color(0xFF656565),
-                                                                                        fontSize: 13,
-                                                                                        fontWeight: FontWeight.normal,
+                                                                                      subtitle: Text(
+                                                                                        '${valueOrDefault<String>(
+                                                                                          columnVariantsRecord.discountRange2.toString(),
+                                                                                          '0',
+                                                                                        )} - ${valueOrDefault<String>(
+                                                                                          columnVariantsRecord.discountRange3.toString(),
+                                                                                          '0',
+                                                                                        )}  ${columnVariantsRecord.unit}',
+                                                                                        textAlign: TextAlign.center,
+                                                                                        style: FlutterFlowTheme.of(context).subtitle2.override(
+                                                                                              fontFamily: 'Montserrat',
+                                                                                              color: Color(0xFF656565),
+                                                                                              fontSize: 13,
+                                                                                              fontWeight: FontWeight.normal,
+                                                                                            ),
                                                                                       ),
+                                                                                      activeColor: Color(0xFF47DA86),
+                                                                                      dense: false,
+                                                                                      controlAffinity: ListTileControlAffinity.trailing,
+                                                                                    ),
+                                                                                    if (responsiveVisibility(
+                                                                                      context: context,
+                                                                                      phone: false,
+                                                                                      tablet: false,
+                                                                                      tabletLandscape: false,
+                                                                                      desktop: false,
+                                                                                    ))
+                                                                                      Text(
+                                                                                        'Tu recibes',
+                                                                                        style: FlutterFlowTheme.of(context).bodyText1,
+                                                                                      ),
+                                                                                    if (responsiveVisibility(
+                                                                                      context: context,
+                                                                                      phone: false,
+                                                                                      tablet: false,
+                                                                                      tabletLandscape: false,
+                                                                                      desktop: false,
+                                                                                    ))
+                                                                                      Row(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        children: [
+                                                                                          Text(
+                                                                                            'Precio Público',
+                                                                                            style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                                  fontFamily: 'Montserrat',
+                                                                                                  fontWeight: FontWeight.normal,
+                                                                                                ),
+                                                                                          ),
+                                                                                          Padding(
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                                                            child: Text(
+                                                                                              '\$85',
+                                                                                              style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                                    fontFamily: 'Montserrat',
+                                                                                                    color: Color(0xFF47DA86),
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                    if (responsiveVisibility(
+                                                                                      context: context,
+                                                                                      phone: false,
+                                                                                      tablet: false,
+                                                                                      tabletLandscape: false,
+                                                                                      desktop: false,
+                                                                                    ))
+                                                                                      Row(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        children: [
+                                                                                          Text(
+                                                                                            'Precio Mayoreo',
+                                                                                            style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                                  fontFamily: 'Montserrat',
+                                                                                                  fontWeight: FontWeight.normal,
+                                                                                                ),
+                                                                                          ),
+                                                                                          Padding(
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                                                            child: Text(
+                                                                                              '\$65',
+                                                                                              style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                                    fontFamily: 'Montserrat',
+                                                                                                    color: Color(0xFF47DA86),
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                    if (responsiveVisibility(
+                                                                                      context: context,
+                                                                                      phone: false,
+                                                                                      tablet: false,
+                                                                                      tabletLandscape: false,
+                                                                                      desktop: false,
+                                                                                    ))
+                                                                                      Row(
+                                                                                        mainAxisSize: MainAxisSize.max,
+                                                                                        children: [
+                                                                                          Text(
+                                                                                            'Precio Mega Mayoreo',
+                                                                                            style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                                  fontFamily: 'Montserrat',
+                                                                                                  fontWeight: FontWeight.normal,
+                                                                                                ),
+                                                                                          ),
+                                                                                          Padding(
+                                                                                            padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                                                            child: Text(
+                                                                                              '\$45',
+                                                                                              style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                                    fontFamily: 'Montserrat',
+                                                                                                    color: Color(0xFF47DA86),
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ),
+                                                                                        ],
+                                                                                      ),
+                                                                                  ],
                                                                                 ),
-                                                                                activeColor: Color(0xFF47DA86),
-                                                                                dense: false,
-                                                                                controlAffinity: ListTileControlAffinity.trailing,
                                                                               ),
-                                                                              Text(
-                                                                                'Tu recibes',
-                                                                                style: FlutterFlowTheme.of(context).bodyText1,
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Text(
-                                                                                    'Precio Público',
-                                                                                    style: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                          fontFamily: 'Montserrat',
-                                                                                          fontWeight: FontWeight.normal,
-                                                                                        ),
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                                                                                    child: Text(
-                                                                                      '\$85',
-                                                                                      style: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                            fontFamily: 'Montserrat',
-                                                                                            color: Color(0xFF47DA86),
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Text(
-                                                                                    'Precio Mayoreo',
-                                                                                    style: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                          fontFamily: 'Montserrat',
-                                                                                          fontWeight: FontWeight.normal,
-                                                                                        ),
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                                                                                    child: Text(
-                                                                                      '\$65',
-                                                                                      style: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                            fontFamily: 'Montserrat',
-                                                                                            color: Color(0xFF47DA86),
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                              Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                children: [
-                                                                                  Text(
-                                                                                    'Precio Mega Mayoreo',
-                                                                                    style: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                          fontFamily: 'Montserrat',
-                                                                                          fontWeight: FontWeight.normal,
-                                                                                        ),
-                                                                                  ),
-                                                                                  Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                                                                                    child: Text(
-                                                                                      '\$45',
-                                                                                      style: FlutterFlowTheme.of(context).bodyText1.override(
-                                                                                            fontFamily: 'Montserrat',
-                                                                                            color: Color(0xFF47DA86),
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ],
+                                                                            ),
                                                                           ),
-                                                                        ),
+                                                                          if (functions.isLessThan(int.parse(inventoryMobileController.text), columnVariantsRecord.discountRange3) ??
+                                                                              true)
+                                                                            InkWell(
+                                                                              onTap: () async {
+                                                                                await showDialog(
+                                                                                  context: context,
+                                                                                  builder: (alertDialogContext) {
+                                                                                    return AlertDialog(
+                                                                                      title: Text('Atención'),
+                                                                                      content: Text('Debes tener suficientes productos en inventario para activar este descuento.'),
+                                                                                      actions: [
+                                                                                        TextButton(
+                                                                                          onPressed: () => Navigator.pop(alertDialogContext),
+                                                                                          child: Text('Ok'),
+                                                                                        ),
+                                                                                      ],
+                                                                                    );
+                                                                                  },
+                                                                                );
+                                                                              },
+                                                                              child: Container(
+                                                                                width: 200,
+                                                                                height: 55,
+                                                                                decoration: BoxDecoration(),
+                                                                              ),
+                                                                            ),
+                                                                        ],
                                                                       ),
                                                                     ],
                                                                   ),
@@ -1229,13 +1382,14 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                                           ''),
                                                       widget.variantId,
                                                       int.parse(
-                                                          textController2.text),
-                                                      publicPriceSwitchValue1,
-                                                      wholesalePriceSwitchValue1,
-                                                      megaWholesalePriceSwitchValue1,
-                                                      discount1EnabledValue,
-                                                      discount2EnabledValue1,
-                                                      discount3EnabledValue1,
+                                                          inventoryMobileController
+                                                              .text),
+                                                      publicPriceSwitchMobileValue,
+                                                      wholesalePriceSwitchMobileValue,
+                                                      megaWholesalePriceSwitchMobileValue,
+                                                      discount1EnabledMobileValue,
+                                                      discount2EnabledMobileValue,
+                                                      discount3EnabledMobileValue,
                                                       widget.productId,
                                                       valueOrDefault(
                                                           currentUserDocument
@@ -1244,7 +1398,7 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                                     );
                                                     if ((updateResponses) ==
                                                         'Success') {
-                                                      if ((textController2
+                                                      if ((inventoryMobileController
                                                               .text) !=
                                                           '0') {
                                                         await AddToRecentlyAddedCall
@@ -1401,11 +1555,18 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                             decoration: BoxDecoration(
                                               color: Color(0x00EEEEEE),
                                             ),
-                                            child: Image.network(
-                                              rowProductsRecord.mainImage,
-                                              width: 100,
-                                              height: 100,
-                                              fit: BoxFit.contain,
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(20),
+                                              child: Image.network(
+                                                valueOrDefault<String>(
+                                                  rowProductsRecord.mainImage,
+                                                  'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset.png?alt=media&token=85f6129c-7ee9-4db8-87ae-2e1adc4e010a',
+                                                ),
+                                                width: 100,
+                                                height: 100,
+                                                fit: BoxFit.contain,
+                                              ),
                                             ),
                                           ),
                                           SingleChildScrollView(
@@ -1603,7 +1764,7 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                                                       child:
                                                                           TextFormField(
                                                                         controller:
-                                                                            textController2,
+                                                                            inventoryWebController,
                                                                         obscureText:
                                                                             false,
                                                                         decoration:
@@ -1698,10 +1859,10 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                                                               BoxDecoration(),
                                                                           child:
                                                                               SwitchListTile(
-                                                                            value: publicPriceSwitchValue2 ??=
+                                                                            value: publicPriceSwitchValue ??=
                                                                                 widget.publicPriceEnabled,
                                                                             onChanged: (newValue) =>
-                                                                                setState(() => publicPriceSwitchValue2 = newValue),
+                                                                                setState(() => publicPriceSwitchValue = newValue),
                                                                             title:
                                                                                 Text(
                                                                               'Precio Publico',
@@ -1741,10 +1902,10 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                                                               BoxDecoration(),
                                                                           child:
                                                                               SwitchListTile(
-                                                                            value: wholesalePriceSwitchValue2 ??=
+                                                                            value: wholesalePriceSwitchValue ??=
                                                                                 widget.wholesalePriceEnabled,
                                                                             onChanged: (newValue) =>
-                                                                                setState(() => wholesalePriceSwitchValue2 = newValue),
+                                                                                setState(() => wholesalePriceSwitchValue = newValue),
                                                                             title:
                                                                                 Text(
                                                                               'Precio Mayoreo',
@@ -1786,10 +1947,10 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                                                               BoxDecoration(),
                                                                           child:
                                                                               SwitchListTile(
-                                                                            value: megaWholesalePriceSwitchValue2 ??=
+                                                                            value: megaWholesalePriceSwitchValue ??=
                                                                                 widget.megaWholesalePriceEnabled,
                                                                             onChanged: (newValue) =>
-                                                                                setState(() => megaWholesalePriceSwitchValue2 = newValue),
+                                                                                setState(() => megaWholesalePriceSwitchValue = newValue),
                                                                             title:
                                                                                 Text(
                                                                               'Precio Mega Mayoreo',
@@ -1885,227 +2046,275 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                                           MainAxisAlignment
                                                               .center,
                                                       children: [
-                                                        Container(
-                                                          width: MediaQuery.of(
-                                                                      context)
-                                                                  .size
-                                                                  .width *
-                                                              0.9,
-                                                          constraints:
-                                                              BoxConstraints(
-                                                            maxWidth: 350,
-                                                          ),
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: Colors.white,
-                                                            boxShadow: [
-                                                              BoxShadow(
-                                                                blurRadius: 10,
-                                                                color: Color(
-                                                                    0x0D000000),
-                                                              )
-                                                            ],
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        5),
-                                                          ),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        20,
-                                                                        0,
-                                                                        20,
-                                                                        20),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .spaceBetween,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                SwitchListTile(
-                                                                  value: discount3EnabledValue2 ??=
-                                                                      widget
-                                                                          .discount3Enabled,
-                                                                  onChanged: (newValue) =>
-                                                                      setState(() =>
-                                                                          discount3EnabledValue2 =
-                                                                              newValue),
-                                                                  title: Text(
-                                                                    '${formatNumber(
-                                                                      columnVariantsRecord
-                                                                          .discount3,
-                                                                      formatType:
-                                                                          FormatType
-                                                                              .percent,
-                                                                    )} OFF',
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .subtitle1
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Montserrat',
-                                                                          color:
-                                                                              Color(0xFF47DA86),
-                                                                        ),
-                                                                  ),
-                                                                  subtitle:
-                                                                      Text(
-                                                                    '${columnVariantsRecord.discountRange2.toString()} - ${columnVariantsRecord.discount3.toString()}${columnVariantsRecord.unit}',
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .subtitle2
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Montserrat',
-                                                                          color:
-                                                                              Color(0xFF656565),
-                                                                          fontSize:
-                                                                              13,
-                                                                          fontWeight:
-                                                                              FontWeight.normal,
-                                                                        ),
-                                                                  ),
-                                                                  activeColor:
-                                                                      Color(
-                                                                          0xFF47DA86),
-                                                                  dense: false,
-                                                                  controlAffinity:
-                                                                      ListTileControlAffinity
-                                                                          .trailing,
-                                                                ),
-                                                                Text(
-                                                                  'Tu recibes',
-                                                                  style: FlutterFlowTheme.of(
+                                                        Stack(
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  1, 0),
+                                                          children: [
+                                                            Container(
+                                                              width: MediaQuery.of(
                                                                           context)
-                                                                      .bodyText1,
-                                                                ),
-                                                                Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Text(
-                                                                      'Precio Público',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyText1
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
-                                                                            fontWeight:
-                                                                                FontWeight.normal,
-                                                                          ),
-                                                                    ),
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              10,
-                                                                              0,
-                                                                              0,
-                                                                              0),
-                                                                      child:
-                                                                          Text(
-                                                                        '\$75',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyText1
-                                                                            .override(
-                                                                              fontFamily: 'Montserrat',
-                                                                              color: Color(0xFF47DA86),
+                                                                      .size
+                                                                      .width *
+                                                                  0.9,
+                                                              constraints:
+                                                                  BoxConstraints(
+                                                                maxWidth: 350,
+                                                              ),
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: Colors
+                                                                    .white,
+                                                                boxShadow: [
+                                                                  BoxShadow(
+                                                                    blurRadius:
+                                                                        10,
+                                                                    color: Color(
+                                                                        0x0D000000),
+                                                                  )
+                                                                ],
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            5),
+                                                              ),
+                                                              child: Visibility(
+                                                                visible:
+                                                                    (columnVariantsRecord
+                                                                            .discountRange1) >
+                                                                        0,
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          20,
+                                                                          0,
+                                                                          20,
+                                                                          20),
+                                                                  child: Column(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .spaceBetween,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .start,
+                                                                    children: [
+                                                                      SwitchListTile(
+                                                                        value: discount1EnabledValue ??=
+                                                                            widget.discount1Enabled,
+                                                                        onChanged:
+                                                                            (newValue) =>
+                                                                                setState(() => discount1EnabledValue = newValue),
+                                                                        title:
+                                                                            Text(
+                                                                          '${valueOrDefault<String>(
+                                                                            formatNumber(
+                                                                              columnVariantsRecord.discount1,
+                                                                              formatType: FormatType.percent,
                                                                             ),
+                                                                            '0',
+                                                                          )} OFF',
+                                                                          textAlign:
+                                                                              TextAlign.center,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .subtitle1
+                                                                              .override(
+                                                                                fontFamily: 'Montserrat',
+                                                                                color: Color(0xFF47DA86),
+                                                                              ),
+                                                                        ),
+                                                                        subtitle:
+                                                                            Text(
+                                                                          '1 - ${valueOrDefault<String>(
+                                                                            columnVariantsRecord.discountRange1.toString(),
+                                                                            '0',
+                                                                          )}  ${columnVariantsRecord.unit}',
+                                                                          textAlign:
+                                                                              TextAlign.center,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .subtitle2
+                                                                              .override(
+                                                                                fontFamily: 'Montserrat',
+                                                                                color: Color(0xFF656565),
+                                                                                fontSize: 13,
+                                                                                fontWeight: FontWeight.normal,
+                                                                              ),
+                                                                        ),
+                                                                        activeColor:
+                                                                            Color(0xFF47DA86),
+                                                                        dense:
+                                                                            false,
+                                                                        controlAffinity:
+                                                                            ListTileControlAffinity.trailing,
                                                                       ),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                                Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Text(
-                                                                      'Precio Mayoreo',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyText1
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
-                                                                            fontWeight:
-                                                                                FontWeight.normal,
-                                                                          ),
-                                                                    ),
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              10,
-                                                                              0,
-                                                                              0,
-                                                                              0),
-                                                                      child:
-                                                                          Text(
-                                                                        '\$55',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyText1
-                                                                            .override(
-                                                                              fontFamily: 'Montserrat',
-                                                                              color: Color(0xFF47DA86),
+                                                                      if (responsiveVisibility(
+                                                                        context:
+                                                                            context,
+                                                                        phone:
+                                                                            false,
+                                                                        tablet:
+                                                                            false,
+                                                                        desktop:
+                                                                            false,
+                                                                      ))
+                                                                        Text(
+                                                                          'Tu recibes',
+                                                                          style:
+                                                                              FlutterFlowTheme.of(context).bodyText1,
+                                                                        ),
+                                                                      if (responsiveVisibility(
+                                                                        context:
+                                                                            context,
+                                                                        phone:
+                                                                            false,
+                                                                        tablet:
+                                                                            false,
+                                                                        tabletLandscape:
+                                                                            false,
+                                                                        desktop:
+                                                                            false,
+                                                                      ))
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Text(
+                                                                              'Precio Público',
+                                                                              style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                    fontFamily: 'Montserrat',
+                                                                                    fontWeight: FontWeight.normal,
+                                                                                  ),
                                                                             ),
-                                                                      ),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                                Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Text(
-                                                                      'Precio Mega Mayoreo',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyText1
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
-                                                                            fontWeight:
-                                                                                FontWeight.normal,
-                                                                          ),
-                                                                    ),
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              10,
-                                                                              0,
-                                                                              0,
-                                                                              0),
-                                                                      child:
-                                                                          Text(
-                                                                        '\$35',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyText1
-                                                                            .override(
-                                                                              fontFamily: 'Montserrat',
-                                                                              color: Color(0xFF47DA86),
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                                              child: Text(
+                                                                                '\$75',
+                                                                                style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                      fontFamily: 'Montserrat',
+                                                                                      color: Color(0xFF47DA86),
+                                                                                    ),
+                                                                              ),
                                                                             ),
-                                                                      ),
-                                                                    ),
-                                                                  ],
+                                                                          ],
+                                                                        ),
+                                                                      if (responsiveVisibility(
+                                                                        context:
+                                                                            context,
+                                                                        phone:
+                                                                            false,
+                                                                        tablet:
+                                                                            false,
+                                                                        tabletLandscape:
+                                                                            false,
+                                                                        desktop:
+                                                                            false,
+                                                                      ))
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Text(
+                                                                              'Precio Mayoreo',
+                                                                              style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                    fontFamily: 'Montserrat',
+                                                                                    fontWeight: FontWeight.normal,
+                                                                                  ),
+                                                                            ),
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                                              child: Text(
+                                                                                '\$55',
+                                                                                style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                      fontFamily: 'Montserrat',
+                                                                                      color: Color(0xFF47DA86),
+                                                                                    ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      if (responsiveVisibility(
+                                                                        context:
+                                                                            context,
+                                                                        phone:
+                                                                            false,
+                                                                        tablet:
+                                                                            false,
+                                                                        tabletLandscape:
+                                                                            false,
+                                                                        desktop:
+                                                                            false,
+                                                                      ))
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Text(
+                                                                              'Precio Mega Mayoreo',
+                                                                              style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                    fontFamily: 'Montserrat',
+                                                                                    fontWeight: FontWeight.normal,
+                                                                                  ),
+                                                                            ),
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                                              child: Text(
+                                                                                '\$35',
+                                                                                style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                      fontFamily: 'Montserrat',
+                                                                                      color: Color(0xFF47DA86),
+                                                                                    ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                    ],
+                                                                  ),
                                                                 ),
-                                                              ],
+                                                              ),
                                                             ),
-                                                          ),
+                                                            if (functions.isLessThan(
+                                                                    int.parse(
+                                                                        inventoryWebController
+                                                                            .text),
+                                                                    columnVariantsRecord
+                                                                        .discountRange1) ??
+                                                                true)
+                                                              InkWell(
+                                                                onTap:
+                                                                    () async {
+                                                                  await showDialog(
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (alertDialogContext) {
+                                                                      return AlertDialog(
+                                                                        title: Text(
+                                                                            'Atención'),
+                                                                        content:
+                                                                            Text('Debes tener suficientes productos en inventario para activar este descuento.'),
+                                                                        actions: [
+                                                                          TextButton(
+                                                                            onPressed: () =>
+                                                                                Navigator.pop(alertDialogContext),
+                                                                            child:
+                                                                                Text('Ok'),
+                                                                          ),
+                                                                        ],
+                                                                      );
+                                                                    },
+                                                                  );
+                                                                },
+                                                                child:
+                                                                    Container(
+                                                                  width: 200,
+                                                                  height: 70,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                ),
+                                                              ),
+                                                          ],
                                                         ),
                                                       ],
                                                     ),
@@ -2122,229 +2331,273 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                                           MainAxisAlignment
                                                               .center,
                                                       children: [
-                                                        Container(
-                                                          width: MediaQuery.of(
-                                                                      context)
-                                                                  .size
-                                                                  .width *
-                                                              0.9,
-                                                          constraints:
-                                                              BoxConstraints(
-                                                            maxWidth: 350,
-                                                          ),
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: Colors.white,
-                                                            boxShadow: [
-                                                              BoxShadow(
-                                                                blurRadius: 10,
-                                                                color: Color(
-                                                                    0x0D000000),
-                                                              )
-                                                            ],
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        5),
-                                                          ),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        20,
-                                                                        0,
-                                                                        20,
-                                                                        20),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .spaceBetween,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                SwitchListTile(
-                                                                  value: discount2EnabledValue2 ??=
-                                                                      widget
-                                                                          .discount2Enabled,
-                                                                  onChanged: (newValue) =>
-                                                                      setState(() =>
-                                                                          discount2EnabledValue2 =
-                                                                              newValue),
-                                                                  title: Text(
-                                                                    '${formatNumber(
-                                                                      columnVariantsRecord
-                                                                          .discount2,
-                                                                      formatType:
-                                                                          FormatType
-                                                                              .percent,
-                                                                    )} OFF',
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .subtitle1
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Montserrat',
-                                                                          color:
-                                                                              Color(0xFF47DA86),
-                                                                          fontSize:
-                                                                              20,
-                                                                        ),
-                                                                  ),
-                                                                  subtitle:
-                                                                      Text(
-                                                                    '${columnVariantsRecord.discount1.toString()} - ${columnVariantsRecord.discount2.toString()}${columnVariantsRecord.unit}',
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .subtitle2
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Montserrat',
-                                                                          color:
-                                                                              Color(0xFF656565),
-                                                                          fontSize:
-                                                                              13,
-                                                                          fontWeight:
-                                                                              FontWeight.normal,
-                                                                        ),
-                                                                  ),
-                                                                  activeColor:
-                                                                      Color(
-                                                                          0xFF47DA86),
-                                                                  dense: false,
-                                                                  controlAffinity:
-                                                                      ListTileControlAffinity
-                                                                          .trailing,
-                                                                ),
-                                                                Text(
-                                                                  'Tu recibes',
-                                                                  style: FlutterFlowTheme.of(
+                                                        Stack(
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  1, 0),
+                                                          children: [
+                                                            Container(
+                                                              width: MediaQuery.of(
                                                                           context)
-                                                                      .bodyText1,
-                                                                ),
-                                                                Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Text(
-                                                                      'Precio Público',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyText1
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
-                                                                            fontWeight:
-                                                                                FontWeight.normal,
-                                                                          ),
-                                                                    ),
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              10,
-                                                                              0,
-                                                                              0,
-                                                                              0),
-                                                                      child:
-                                                                          Text(
-                                                                        '\$80',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyText1
-                                                                            .override(
-                                                                              fontFamily: 'Montserrat',
-                                                                              color: Color(0xFF47DA86),
-                                                                            ),
+                                                                      .size
+                                                                      .width *
+                                                                  0.9,
+                                                              constraints:
+                                                                  BoxConstraints(
+                                                                maxWidth: 350,
+                                                              ),
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: Colors
+                                                                    .white,
+                                                                boxShadow: [
+                                                                  BoxShadow(
+                                                                    blurRadius:
+                                                                        10,
+                                                                    color: Color(
+                                                                        0x0D000000),
+                                                                  )
+                                                                ],
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            5),
+                                                              ),
+                                                              child: Visibility(
+                                                                visible:
+                                                                    (columnVariantsRecord
+                                                                            .discountRange2) >
+                                                                        0,
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          20,
+                                                                          0,
+                                                                          20,
+                                                                          20),
+                                                                  child: Column(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .spaceBetween,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .start,
+                                                                    children: [
+                                                                      SwitchListTile(
+                                                                        value: discount2EnabledValue ??=
+                                                                            widget.discount2Enabled,
+                                                                        onChanged:
+                                                                            (newValue) =>
+                                                                                setState(() => discount2EnabledValue = newValue),
+                                                                        title:
+                                                                            Text(
+                                                                          '${formatNumber(
+                                                                            columnVariantsRecord.discount2,
+                                                                            formatType:
+                                                                                FormatType.percent,
+                                                                          )} OFF',
+                                                                          textAlign:
+                                                                              TextAlign.center,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .subtitle1
+                                                                              .override(
+                                                                                fontFamily: 'Montserrat',
+                                                                                color: Color(0xFF47DA86),
+                                                                                fontSize: 20,
+                                                                              ),
+                                                                        ),
+                                                                        subtitle:
+                                                                            Text(
+                                                                          '${columnVariantsRecord.discountRange1.toString()} - ${columnVariantsRecord.discountRange2.toString()}  ${columnVariantsRecord.unit}',
+                                                                          textAlign:
+                                                                              TextAlign.center,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .subtitle2
+                                                                              .override(
+                                                                                fontFamily: 'Montserrat',
+                                                                                color: Color(0xFF656565),
+                                                                                fontSize: 13,
+                                                                                fontWeight: FontWeight.normal,
+                                                                              ),
+                                                                        ),
+                                                                        activeColor:
+                                                                            Color(0xFF47DA86),
+                                                                        dense:
+                                                                            false,
+                                                                        controlAffinity:
+                                                                            ListTileControlAffinity.trailing,
                                                                       ),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                                Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Text(
-                                                                      'Precio Mayoreo',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyText1
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
-                                                                            fontWeight:
-                                                                                FontWeight.normal,
-                                                                          ),
-                                                                    ),
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              10,
-                                                                              0,
-                                                                              0,
-                                                                              0),
-                                                                      child:
-                                                                          Text(
-                                                                        '\$60',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyText1
-                                                                            .override(
-                                                                              fontFamily: 'Montserrat',
-                                                                              color: Color(0xFF47DA86),
+                                                                      if (responsiveVisibility(
+                                                                        context:
+                                                                            context,
+                                                                        phone:
+                                                                            false,
+                                                                        tablet:
+                                                                            false,
+                                                                        tabletLandscape:
+                                                                            false,
+                                                                        desktop:
+                                                                            false,
+                                                                      ))
+                                                                        Text(
+                                                                          'Tu recibes',
+                                                                          style:
+                                                                              FlutterFlowTheme.of(context).bodyText1,
+                                                                        ),
+                                                                      if (responsiveVisibility(
+                                                                        context:
+                                                                            context,
+                                                                        phone:
+                                                                            false,
+                                                                        tablet:
+                                                                            false,
+                                                                        tabletLandscape:
+                                                                            false,
+                                                                        desktop:
+                                                                            false,
+                                                                      ))
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Text(
+                                                                              'Precio Público',
+                                                                              style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                    fontFamily: 'Montserrat',
+                                                                                    fontWeight: FontWeight.normal,
+                                                                                  ),
                                                                             ),
-                                                                      ),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                                Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Text(
-                                                                      'Precio Mega Mayoreo',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyText1
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
-                                                                            fontWeight:
-                                                                                FontWeight.normal,
-                                                                          ),
-                                                                    ),
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              10,
-                                                                              0,
-                                                                              0,
-                                                                              0),
-                                                                      child:
-                                                                          Text(
-                                                                        '\$40',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyText1
-                                                                            .override(
-                                                                              fontFamily: 'Montserrat',
-                                                                              color: Color(0xFF47DA86),
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                                              child: Text(
+                                                                                '\$80',
+                                                                                style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                      fontFamily: 'Montserrat',
+                                                                                      color: Color(0xFF47DA86),
+                                                                                    ),
+                                                                              ),
                                                                             ),
-                                                                      ),
-                                                                    ),
-                                                                  ],
+                                                                          ],
+                                                                        ),
+                                                                      if (responsiveVisibility(
+                                                                        context:
+                                                                            context,
+                                                                        phone:
+                                                                            false,
+                                                                        tablet:
+                                                                            false,
+                                                                        tabletLandscape:
+                                                                            false,
+                                                                        desktop:
+                                                                            false,
+                                                                      ))
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Text(
+                                                                              'Precio Mayoreo',
+                                                                              style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                    fontFamily: 'Montserrat',
+                                                                                    fontWeight: FontWeight.normal,
+                                                                                  ),
+                                                                            ),
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                                              child: Text(
+                                                                                '\$60',
+                                                                                style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                      fontFamily: 'Montserrat',
+                                                                                      color: Color(0xFF47DA86),
+                                                                                    ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      if (responsiveVisibility(
+                                                                        context:
+                                                                            context,
+                                                                        phone:
+                                                                            false,
+                                                                        tablet:
+                                                                            false,
+                                                                        tabletLandscape:
+                                                                            false,
+                                                                        desktop:
+                                                                            false,
+                                                                      ))
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Text(
+                                                                              'Precio Mega Mayoreo',
+                                                                              style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                    fontFamily: 'Montserrat',
+                                                                                    fontWeight: FontWeight.normal,
+                                                                                  ),
+                                                                            ),
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                                              child: Text(
+                                                                                '\$40',
+                                                                                style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                      fontFamily: 'Montserrat',
+                                                                                      color: Color(0xFF47DA86),
+                                                                                    ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                    ],
+                                                                  ),
                                                                 ),
-                                                              ],
+                                                              ),
                                                             ),
-                                                          ),
+                                                            if (functions.isLessThan(
+                                                                    int.parse(
+                                                                        inventoryWebController
+                                                                            .text),
+                                                                    columnVariantsRecord
+                                                                        .discountRange2) ??
+                                                                true)
+                                                              InkWell(
+                                                                onTap:
+                                                                    () async {
+                                                                  await showDialog(
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (alertDialogContext) {
+                                                                      return AlertDialog(
+                                                                        title: Text(
+                                                                            'Atención'),
+                                                                        content:
+                                                                            Text('Debes tener suficientes productos en inventario para activar este descuento.'),
+                                                                        actions: [
+                                                                          TextButton(
+                                                                            onPressed: () =>
+                                                                                Navigator.pop(alertDialogContext),
+                                                                            child:
+                                                                                Text('Ok'),
+                                                                          ),
+                                                                        ],
+                                                                      );
+                                                                    },
+                                                                  );
+                                                                },
+                                                                child:
+                                                                    Container(
+                                                                  width: 200,
+                                                                  height: 70,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                ),
+                                                              ),
+                                                          ],
                                                         ),
                                                       ],
                                                     ),
@@ -2361,229 +2614,276 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                                           MainAxisAlignment
                                                               .center,
                                                       children: [
-                                                        Container(
-                                                          width: MediaQuery.of(
-                                                                      context)
-                                                                  .size
-                                                                  .width *
-                                                              0.9,
-                                                          constraints:
-                                                              BoxConstraints(
-                                                            maxWidth: 350,
-                                                          ),
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: Colors.white,
-                                                            boxShadow: [
-                                                              BoxShadow(
-                                                                blurRadius: 10,
-                                                                color: Color(
-                                                                    0x0D000000),
-                                                              )
-                                                            ],
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        5),
-                                                          ),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        20,
-                                                                        0,
-                                                                        20,
-                                                                        20),
-                                                            child: Column(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .spaceBetween,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                SwitchListTile(
-                                                                  value: discount1EnabledDesktValue ??=
-                                                                      widget
-                                                                          .discount1Enabled,
-                                                                  onChanged: (newValue) =>
-                                                                      setState(() =>
-                                                                          discount1EnabledDesktValue =
-                                                                              newValue),
-                                                                  title: Text(
-                                                                    '${formatNumber(
-                                                                      columnVariantsRecord
-                                                                          .discount1,
-                                                                      formatType:
-                                                                          FormatType
-                                                                              .percent,
-                                                                    )} OFF',
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .subtitle1
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Montserrat',
-                                                                          color:
-                                                                              Color(0xFF47DA86),
-                                                                          fontSize:
-                                                                              20,
-                                                                        ),
-                                                                  ),
-                                                                  subtitle:
-                                                                      Text(
-                                                                    '1 - ${columnVariantsRecord.discount1.toString()}${columnVariantsRecord.unit}',
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .center,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .subtitle2
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Montserrat',
-                                                                          color:
-                                                                              Color(0xFF656565),
-                                                                          fontSize:
-                                                                              13,
-                                                                          fontWeight:
-                                                                              FontWeight.normal,
-                                                                        ),
-                                                                  ),
-                                                                  activeColor:
-                                                                      Color(
-                                                                          0xFF47DA86),
-                                                                  dense: false,
-                                                                  controlAffinity:
-                                                                      ListTileControlAffinity
-                                                                          .trailing,
-                                                                ),
-                                                                Text(
-                                                                  'Tu recibes',
-                                                                  style: FlutterFlowTheme.of(
+                                                        Stack(
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  1, 0),
+                                                          children: [
+                                                            Container(
+                                                              width: MediaQuery.of(
                                                                           context)
-                                                                      .bodyText1,
-                                                                ),
-                                                                Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Text(
-                                                                      'Precio Público',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyText1
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
-                                                                            fontWeight:
-                                                                                FontWeight.normal,
-                                                                          ),
-                                                                    ),
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              10,
-                                                                              0,
-                                                                              0,
-                                                                              0),
-                                                                      child:
-                                                                          Text(
-                                                                        '\$85',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyText1
-                                                                            .override(
-                                                                              fontFamily: 'Montserrat',
-                                                                              color: Color(0xFF47DA86),
-                                                                            ),
+                                                                      .size
+                                                                      .width *
+                                                                  0.9,
+                                                              constraints:
+                                                                  BoxConstraints(
+                                                                maxWidth: 350,
+                                                              ),
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: Colors
+                                                                    .white,
+                                                                boxShadow: [
+                                                                  BoxShadow(
+                                                                    blurRadius:
+                                                                        10,
+                                                                    color: Color(
+                                                                        0x0D000000),
+                                                                  )
+                                                                ],
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            5),
+                                                              ),
+                                                              child: Visibility(
+                                                                visible:
+                                                                    (columnVariantsRecord
+                                                                            .discountRange3) >
+                                                                        0,
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          20,
+                                                                          0,
+                                                                          20,
+                                                                          20),
+                                                                  child: Column(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .spaceBetween,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .start,
+                                                                    children: [
+                                                                      SwitchListTile(
+                                                                        value: discount3EnabledDesktValue ??=
+                                                                            widget.discount3Enabled,
+                                                                        onChanged:
+                                                                            (newValue) =>
+                                                                                setState(() => discount3EnabledDesktValue = newValue),
+                                                                        title:
+                                                                            Text(
+                                                                          '${formatNumber(
+                                                                            columnVariantsRecord.discount3,
+                                                                            formatType:
+                                                                                FormatType.percent,
+                                                                          )} OFF',
+                                                                          textAlign:
+                                                                              TextAlign.center,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .subtitle1
+                                                                              .override(
+                                                                                fontFamily: 'Montserrat',
+                                                                                color: Color(0xFF47DA86),
+                                                                                fontSize: 20,
+                                                                              ),
+                                                                        ),
+                                                                        subtitle:
+                                                                            Text(
+                                                                          '${valueOrDefault<String>(
+                                                                            columnVariantsRecord.discountRange2.toString(),
+                                                                            '0',
+                                                                          )} - ${columnVariantsRecord.discountRange3.toString()}  ${columnVariantsRecord.unit}',
+                                                                          textAlign:
+                                                                              TextAlign.center,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .subtitle2
+                                                                              .override(
+                                                                                fontFamily: 'Montserrat',
+                                                                                color: Color(0xFF656565),
+                                                                                fontSize: 13,
+                                                                                fontWeight: FontWeight.normal,
+                                                                              ),
+                                                                        ),
+                                                                        activeColor:
+                                                                            Color(0xFF47DA86),
+                                                                        dense:
+                                                                            false,
+                                                                        controlAffinity:
+                                                                            ListTileControlAffinity.trailing,
                                                                       ),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                                Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Text(
-                                                                      'Precio Mayoreo',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyText1
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
-                                                                            fontWeight:
-                                                                                FontWeight.normal,
-                                                                          ),
-                                                                    ),
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              10,
-                                                                              0,
-                                                                              0,
-                                                                              0),
-                                                                      child:
-                                                                          Text(
-                                                                        '\$65',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyText1
-                                                                            .override(
-                                                                              fontFamily: 'Montserrat',
-                                                                              color: Color(0xFF47DA86),
+                                                                      if (responsiveVisibility(
+                                                                        context:
+                                                                            context,
+                                                                        phone:
+                                                                            false,
+                                                                        tablet:
+                                                                            false,
+                                                                        tabletLandscape:
+                                                                            false,
+                                                                        desktop:
+                                                                            false,
+                                                                      ))
+                                                                        Text(
+                                                                          'Tu recibes',
+                                                                          style:
+                                                                              FlutterFlowTheme.of(context).bodyText1,
+                                                                        ),
+                                                                      if (responsiveVisibility(
+                                                                        context:
+                                                                            context,
+                                                                        phone:
+                                                                            false,
+                                                                        tablet:
+                                                                            false,
+                                                                        tabletLandscape:
+                                                                            false,
+                                                                        desktop:
+                                                                            false,
+                                                                      ))
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Text(
+                                                                              'Precio Público',
+                                                                              style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                    fontFamily: 'Montserrat',
+                                                                                    fontWeight: FontWeight.normal,
+                                                                                  ),
                                                                             ),
-                                                                      ),
-                                                                    ),
-                                                                  ],
-                                                                ),
-                                                                Row(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Text(
-                                                                      'Precio Mega Mayoreo',
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyText1
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
-                                                                            fontWeight:
-                                                                                FontWeight.normal,
-                                                                          ),
-                                                                    ),
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional
-                                                                          .fromSTEB(
-                                                                              10,
-                                                                              0,
-                                                                              0,
-                                                                              0),
-                                                                      child:
-                                                                          Text(
-                                                                        '\$45',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyText1
-                                                                            .override(
-                                                                              fontFamily: 'Montserrat',
-                                                                              color: Color(0xFF47DA86),
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                                              child: Text(
+                                                                                '\$85',
+                                                                                style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                      fontFamily: 'Montserrat',
+                                                                                      color: Color(0xFF47DA86),
+                                                                                    ),
+                                                                              ),
                                                                             ),
-                                                                      ),
-                                                                    ),
-                                                                  ],
+                                                                          ],
+                                                                        ),
+                                                                      if (responsiveVisibility(
+                                                                        context:
+                                                                            context,
+                                                                        phone:
+                                                                            false,
+                                                                        tablet:
+                                                                            false,
+                                                                        tabletLandscape:
+                                                                            false,
+                                                                        desktop:
+                                                                            false,
+                                                                      ))
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Text(
+                                                                              'Precio Mayoreo',
+                                                                              style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                    fontFamily: 'Montserrat',
+                                                                                    fontWeight: FontWeight.normal,
+                                                                                  ),
+                                                                            ),
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                                              child: Text(
+                                                                                '\$65',
+                                                                                style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                      fontFamily: 'Montserrat',
+                                                                                      color: Color(0xFF47DA86),
+                                                                                    ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      if (responsiveVisibility(
+                                                                        context:
+                                                                            context,
+                                                                        phone:
+                                                                            false,
+                                                                        tablet:
+                                                                            false,
+                                                                        tabletLandscape:
+                                                                            false,
+                                                                        desktop:
+                                                                            false,
+                                                                      ))
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Text(
+                                                                              'Precio Mega Mayoreo',
+                                                                              style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                    fontFamily: 'Montserrat',
+                                                                                    fontWeight: FontWeight.normal,
+                                                                                  ),
+                                                                            ),
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                                                              child: Text(
+                                                                                '\$45',
+                                                                                style: FlutterFlowTheme.of(context).bodyText1.override(
+                                                                                      fontFamily: 'Montserrat',
+                                                                                      color: Color(0xFF47DA86),
+                                                                                    ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                    ],
+                                                                  ),
                                                                 ),
-                                                              ],
+                                                              ),
                                                             ),
-                                                          ),
+                                                            if (functions.isLessThan(
+                                                                    int.parse(
+                                                                        inventoryWebController
+                                                                            .text),
+                                                                    columnVariantsRecord
+                                                                        .discountRange3) ??
+                                                                true)
+                                                              InkWell(
+                                                                onTap:
+                                                                    () async {
+                                                                  await showDialog(
+                                                                    context:
+                                                                        context,
+                                                                    builder:
+                                                                        (alertDialogContext) {
+                                                                      return AlertDialog(
+                                                                        title: Text(
+                                                                            'Atención'),
+                                                                        content:
+                                                                            Text('Debes tener suficientes productos en inventario para activar este descuento.'),
+                                                                        actions: [
+                                                                          TextButton(
+                                                                            onPressed: () =>
+                                                                                Navigator.pop(alertDialogContext),
+                                                                            child:
+                                                                                Text('Ok'),
+                                                                          ),
+                                                                        ],
+                                                                      );
+                                                                    },
+                                                                  );
+                                                                },
+                                                                child:
+                                                                    Container(
+                                                                  width: 200,
+                                                                  height: 70,
+                                                                  decoration:
+                                                                      BoxDecoration(),
+                                                                ),
+                                                              ),
+                                                          ],
                                                         ),
                                                       ],
                                                     ),
@@ -2620,13 +2920,14 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                                       ''),
                                                   widget.variantId,
                                                   int.parse(
-                                                      textController2.text),
-                                                  publicPriceSwitchValue2,
-                                                  wholesalePriceSwitchValue2,
-                                                  megaWholesalePriceSwitchValue2,
-                                                  discount1EnabledDesktValue,
-                                                  discount2EnabledValue2,
-                                                  discount3EnabledValue2,
+                                                      inventoryWebController
+                                                          .text),
+                                                  publicPriceSwitchValue,
+                                                  wholesalePriceSwitchValue,
+                                                  megaWholesalePriceSwitchValue,
+                                                  discount1EnabledValue,
+                                                  discount2EnabledValue,
+                                                  discount3EnabledDesktValue,
                                                   widget.productId,
                                                   valueOrDefault(
                                                       currentUserDocument
@@ -2635,7 +2936,8 @@ class _VariantInventoryWidgetState extends State<VariantInventoryWidget> {
                                                 );
                                                 if ((updateResponse) ==
                                                     'Success') {
-                                                  if ((textController2.text) !=
+                                                  if ((inventoryWebController
+                                                          .text) !=
                                                       '0') {
                                                     await AddToRecentlyAddedCall
                                                         .call(

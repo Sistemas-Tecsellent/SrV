@@ -46,19 +46,42 @@ class _VentasCopyWidgetState extends State<VentasCopyWidget> {
                               height: 235,
                               child: Stack(
                                 children: [
-                                  Container(
-                                    width: MediaQuery.of(context).size.width,
-                                    height: 295,
-                                    decoration: BoxDecoration(
-                                      color: Color(0xFFEEEEEE),
-                                      image: DecorationImage(
-                                        fit: BoxFit.cover,
-                                        image: Image.asset(
-                                          'assets/images/Sin_ttulo_(1080__1500_px)_(1080__1200_px).png',
-                                        ).image,
+                                  if (responsiveVisibility(
+                                    context: context,
+                                    phone: false,
+                                  ))
+                                    Container(
+                                      width: MediaQuery.of(context).size.width,
+                                      height: 295,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFFEEEEEE),
+                                        image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: Image.network(
+                                            'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/Seller%20App%20Assets%2FBanner%20Principal%20Desktop.png?alt=media&token=7bc96fb9-84ae-460c-8c32-431da52c2263',
+                                          ).image,
+                                        ),
                                       ),
                                     ),
-                                  ),
+                                  if (responsiveVisibility(
+                                    context: context,
+                                    tablet: false,
+                                    tabletLandscape: false,
+                                    desktop: false,
+                                  ))
+                                    Container(
+                                      width: MediaQuery.of(context).size.width,
+                                      height: 295,
+                                      decoration: BoxDecoration(
+                                        color: Color(0xFFEEEEEE),
+                                        image: DecorationImage(
+                                          fit: BoxFit.cover,
+                                          image: Image.network(
+                                            'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/Seller%20App%20Assets%2FBanner%20Principal%20Mobile.png?alt=media&token=61abbb35-05fa-4fef-8c42-cd72334e803f',
+                                          ).image,
+                                        ),
+                                      ),
+                                    ),
                                   Align(
                                     alignment: AlignmentDirectional(0, 1),
                                     child: Column(
@@ -127,72 +150,73 @@ class _VentasCopyWidgetState extends State<VentasCopyWidget> {
                                                     ),
                                                   ],
                                                 ),
-                                                InkWell(
-                                                  onTap: () async {
-                                                    context.pushNamed(
-                                                      'Perfil',
-                                                      extra: <String, dynamic>{
-                                                        kTransitionInfoKey:
-                                                            TransitionInfo(
-                                                          hasTransition: true,
-                                                          transitionType:
-                                                              PageTransitionType
-                                                                  .fade,
-                                                          duration: Duration(
-                                                              milliseconds: 0),
-                                                        ),
-                                                      },
-                                                    );
-                                                  },
-                                                  child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    children: [
-                                                      Container(
-                                                        width: 80,
-                                                        height: 70,
-                                                        child: Stack(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  1, -1),
-                                                          children: [
-                                                            Align(
-                                                              alignment:
-                                                                  AlignmentDirectional(
-                                                                      0, 1),
-                                                              child: Container(
-                                                                width: 65,
-                                                                height: 65,
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  color: Color(
-                                                                      0xFFEEEEEE),
-                                                                  boxShadow: [
-                                                                    BoxShadow(
-                                                                      blurRadius:
-                                                                          5,
-                                                                      color: Color(
-                                                                          0x12000000),
-                                                                      spreadRadius:
-                                                                          3,
-                                                                    )
-                                                                  ],
-                                                                  shape: BoxShape
-                                                                      .circle,
-                                                                ),
-                                                                child: Align(
-                                                                  alignment:
-                                                                      AlignmentDirectional(
-                                                                          0, 0),
-                                                                  child:
-                                                                      AuthUserStreamWidget(
+                                                Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          -0.5, -0.5),
+                                                  child: InkWell(
+                                                    onTap: () async {
+                                                      context.pushNamed(
+                                                        'Perfil',
+                                                        extra: <String,
+                                                            dynamic>{
+                                                          kTransitionInfoKey:
+                                                              TransitionInfo(
+                                                            hasTransition: true,
+                                                            transitionType:
+                                                                PageTransitionType
+                                                                    .fade,
+                                                            duration: Duration(
+                                                                milliseconds:
+                                                                    0),
+                                                          ),
+                                                        },
+                                                      );
+                                                    },
+                                                    child: Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Container(
+                                                          width: 80,
+                                                          height: 70,
+                                                          child: Stack(
+                                                            alignment:
+                                                                AlignmentDirectional(
+                                                                    1, -1),
+                                                            children: [
+                                                              Align(
+                                                                alignment:
+                                                                    AlignmentDirectional(
+                                                                        0, 1),
+                                                                child:
+                                                                    Container(
+                                                                  width: 65,
+                                                                  height: 65,
+                                                                  decoration:
+                                                                      BoxDecoration(
+                                                                    color: Color(
+                                                                        0xFFEEEEEE),
+                                                                    boxShadow: [
+                                                                      BoxShadow(
+                                                                        blurRadius:
+                                                                            5,
+                                                                        color: Color(
+                                                                            0x12000000),
+                                                                        spreadRadius:
+                                                                            3,
+                                                                      )
+                                                                    ],
+                                                                    shape: BoxShape
+                                                                        .circle,
+                                                                  ),
+                                                                  child: Align(
+                                                                    alignment:
+                                                                        AlignmentDirectional(
+                                                                            0,
+                                                                            0),
                                                                     child:
-                                                                        InkWell(
-                                                                      onTap:
-                                                                          () async {
-                                                                        context.pushNamed(
-                                                                            'Perfil');
-                                                                      },
+                                                                        AuthUserStreamWidget(
                                                                       child:
                                                                           Container(
                                                                         width:
@@ -221,11 +245,11 @@ class _VentasCopyWidgetState extends State<VentasCopyWidget> {
                                                                   ),
                                                                 ),
                                                               ),
-                                                            ),
-                                                          ],
+                                                            ],
+                                                          ),
                                                         ),
-                                                      ),
-                                                    ],
+                                                      ],
+                                                    ),
                                                   ),
                                                 ),
                                               ],
@@ -247,15 +271,16 @@ class _VentasCopyWidgetState extends State<VentasCopyWidget> {
                                                 alignment:
                                                     AlignmentDirectional(0, 0),
                                                 child: FFButtonWidget(
-                                                  onPressed: () async {
-                                                    context
-                                                        .pushNamed('Comprar');
+                                                  onPressed: () {
+                                                    print('Button pressed ...');
                                                   },
                                                   text: 'Ir a comprar',
                                                   options: FFButtonOptions(
                                                     width: 120,
                                                     height: 30,
-                                                    color: Color(0xFF1EEBBD),
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .alternate,
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .subtitle2
@@ -265,7 +290,7 @@ class _VentasCopyWidgetState extends State<VentasCopyWidget> {
                                                           color: Colors.white,
                                                           fontSize: 14,
                                                         ),
-                                                    elevation: 2,
+                                                    elevation: 0,
                                                     borderSide: BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1,

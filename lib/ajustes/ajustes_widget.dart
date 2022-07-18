@@ -1,6 +1,8 @@
+import '../auth/auth_util.dart';
 import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -54,6 +56,7 @@ class _AjustesWidgetState extends State<AjustesWidget> {
           onTap: () => FocusScope.of(context).unfocus(),
           child: Column(
             mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               SingleChildScrollView(
                 child: Column(
@@ -125,6 +128,56 @@ class _AjustesWidgetState extends State<AjustesWidget> {
                       ),
                     ),
                   ],
+                ),
+              ),
+              FFButtonWidget(
+                onPressed: () async {
+                  var confirmDialogResponse = await showDialog<bool>(
+                        context: context,
+                        builder: (alertDialogContext) {
+                          return AlertDialog(
+                            title: Text('Eliminar mi cuenta'),
+                            content: Text(
+                                '¿Estás seguro de eliminar tu cuenta? Esta acción no se puede deshacer.'),
+                            actions: [
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext, false),
+                                child:
+                                    Text('No, no quiero eliminar mi cuenta.'),
+                              ),
+                              TextButton(
+                                onPressed: () =>
+                                    Navigator.pop(alertDialogContext, true),
+                                child: Text('Si, quiero eliminar mi cuenta.'),
+                              ),
+                            ],
+                          );
+                        },
+                      ) ??
+                      false;
+                  GoRouter.of(context).prepareAuthEvent();
+                  await signOut();
+                  await deleteUser(context);
+                  context.goNamedAuth('InicioDeSesion', mounted);
+                },
+                text: 'Eliminar mi cuenta',
+                options: FFButtonOptions(
+                  width: 330,
+                  height: 40,
+                  color: Color(0x00FDC064),
+                  textStyle: FlutterFlowTheme.of(context).subtitle2.override(
+                        fontFamily: 'Montserrat',
+                        color: Color(0xFF5E5E5E),
+                        fontSize: 12,
+                        fontWeight: FontWeight.normal,
+                      ),
+                  elevation: 0,
+                  borderSide: BorderSide(
+                    color: Colors.transparent,
+                    width: 1,
+                  ),
+                  borderRadius: BorderRadius.circular(8),
                 ),
               ),
             ],

@@ -40,26 +40,128 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                               PageController(initialPage: 0),
                           scrollDirection: Axis.horizontal,
                           children: [
-                            Image.asset(
-                              'assets/images/mcatd_1.png',
-                              width: 100,
-                              height: 100,
-                              fit: BoxFit.contain,
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.network(
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sr-construccion-vendedores-cx5tr1/assets/ewlsn3tana9z/1.png',
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.75,
+                                  fit: BoxFit.contain,
+                                ),
+                                if (responsiveVisibility(
+                                  context: context,
+                                  phone: false,
+                                ))
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 10, 0, 0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        FFButtonWidget(
+                                          onPressed: () async {
+                                            await pageViewController.nextPage(
+                                              duration:
+                                                  Duration(milliseconds: 300),
+                                              curve: Curves.ease,
+                                            );
+                                          },
+                                          text: 'Siguiente',
+                                          options: FFButtonOptions(
+                                            width: 130,
+                                            height: 40,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryColor,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .subtitle2
+                                                    .override(
+                                                      fontFamily: 'Montserrat',
+                                                      color: Colors.white,
+                                                      fontSize: 13,
+                                                    ),
+                                            borderSide: BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                              ],
                             ),
-                            Image.asset(
-                              'assets/images/9hsjc_2.png',
-                              width: 100,
-                              height: 100,
-                              fit: BoxFit.contain,
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.network(
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sr-construccion-proveedor-0talpe/assets/4ucqktjhmad6/2.png',
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.75,
+                                  fit: BoxFit.contain,
+                                ),
+                                if (responsiveVisibility(
+                                  context: context,
+                                  phone: false,
+                                ))
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0, 10, 0, 0),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        FFButtonWidget(
+                                          onPressed: () async {
+                                            await pageViewController.nextPage(
+                                              duration:
+                                                  Duration(milliseconds: 300),
+                                              curve: Curves.ease,
+                                            );
+                                          },
+                                          text: 'Siguiente',
+                                          options: FFButtonOptions(
+                                            width: 130,
+                                            height: 40,
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryColor,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .subtitle2
+                                                    .override(
+                                                      fontFamily: 'Montserrat',
+                                                      color: Colors.white,
+                                                      fontSize: 13,
+                                                    ),
+                                            borderSide: BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                              ],
                             ),
                             Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
-                                Image.asset(
-                                  'assets/images/albfo_3.png',
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.75,
+                                Image.network(
+                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sr-construccion-proveedor-0talpe/assets/znq5pwomnk0o/3.png',
+                                  height:
+                                      MediaQuery.of(context).size.height * 0.75,
                                   fit: BoxFit.contain,
                                 ),
                                 Padding(

@@ -121,8 +121,8 @@ class _SobreSrConstruccionWidgetState extends State<SobreSrConstruccionWidget> {
                               ),
                               Align(
                                 alignment: AlignmentDirectional(1, 1),
-                                child: Image.asset(
-                                  'assets/images/ISH_-_Presentacin_1_(3).png',
+                                child: Image.network(
+                                  'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/Seller%20App%20Assets%2FISH%20-%20Presentaci%C3%B3n%201%20(3).png?alt=media&token=229c75c9-5ab7-420e-a765-02d1ea5b6f9c',
                                   height: 450,
                                   fit: BoxFit.cover,
                                 ),
@@ -148,6 +148,7 @@ class _SobreSrConstruccionWidgetState extends State<SobreSrConstruccionWidget> {
                                               .override(
                                                 fontFamily: 'Montserrat',
                                                 fontSize: 16,
+                                                fontWeight: FontWeight.normal,
                                               ),
                                         ),
                                       ),
@@ -446,8 +447,8 @@ class _SobreSrConstruccionWidgetState extends State<SobreSrConstruccionWidget> {
                               ),
                               Align(
                                 alignment: AlignmentDirectional(1, 1),
-                                child: Image.asset(
-                                  'assets/images/ISH_-_Presentacin_1_(3).png',
+                                child: Image.network(
+                                  'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/Seller%20App%20Assets%2FISH%20-%20Presentaci%C3%B3n%201%20(3).png?alt=media&token=229c75c9-5ab7-420e-a765-02d1ea5b6f9c',
                                   height: 250,
                                   fit: BoxFit.cover,
                                 ),

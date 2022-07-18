@@ -116,8 +116,8 @@ class _IngresaCostoDeEnvioAdminWidgetState
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    context.pop();
                   },
                   text: 'Cancelar',
                   options: FFButtonOptions(

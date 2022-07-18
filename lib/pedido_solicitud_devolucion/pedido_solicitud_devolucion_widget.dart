@@ -85,8 +85,8 @@ class _PedidoSolicitudDevolucionWidgetState
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
-                                  Image.asset(
-                                    'assets/images/Diseo_sin_ttulo_(6).png',
+                                  Image.network(
+                                    'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/Seller%20App%20Assets%2FGanancias%20Icon.png?alt=media&token=62f3f19a-8b61-4ef2-af48-d3dee66cbf85',
                                     width: 100,
                                     height: 100,
                                     fit: BoxFit.cover,
@@ -439,6 +439,7 @@ class _PedidoSolicitudDevolucionWidgetState
                               ),
                               Column(
                                 mainAxisSize: MainAxisSize.max,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(

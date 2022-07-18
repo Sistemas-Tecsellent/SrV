@@ -86,18 +86,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => InicioDeSesionWidget(),
             ),
             FFRoute(
+              name: 'Productos',
+              path: 'mis-productos',
+              requireAuth: true,
+              builder: (context, params) => ProductosWidget(),
+            ),
+            FFRoute(
               name: 'searchWitCategory',
               path: 'buscar/categoria',
               requireAuth: true,
               builder: (context, params) => SearchWitCategoryWidget(
                 category: params.getParam('category', ParamType.String),
               ),
-            ),
-            FFRoute(
-              name: 'Productos',
-              path: 'mis-productos',
-              requireAuth: true,
-              builder: (context, params) => ProductosWidget(),
             ),
             FFRoute(
               name: 'Marcas',
@@ -117,6 +117,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               requireAuth: true,
               builder: (context, params) => ProductosDeMarcaWidget(
                 brand: params.getParam('brand', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'NuevoPedidoEXPRESS',
+              path: 'mis-pedidos/nuevo-pedido',
+              requireAuth: true,
+              builder: (context, params) => NuevoPedidoEXPRESSWidget(
+                expressOrderId:
+                    params.getParam('expressOrderId', ParamType.String),
               ),
             ),
             FFRoute(
@@ -145,19 +154,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'NuevoPedidoEXPRESS',
-              path: 'mis-pedidos/nuevo-pedido',
-              requireAuth: true,
-              builder: (context, params) => NuevoPedidoEXPRESSWidget(
-                expressOrderId:
-                    params.getParam('expressOrderId', ParamType.String),
-              ),
-            ),
-            FFRoute(
               name: 'PedidoListoEXPRESS',
               path: 'mis-pedidos/pedido-listo',
               requireAuth: true,
               builder: (context, params) => PedidoListoEXPRESSWidget(
+                orderId: params.getParam('orderId', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'PorEntregarEXPRESS',
+              path: 'mis-pedidos/por-entregar',
+              requireAuth: true,
+              builder: (context, params) => PorEntregarEXPRESSWidget(
                 orderId: params.getParam('orderId', ParamType.String),
               ),
             ),
@@ -170,11 +178,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'PorEntregarEXPRESS',
-              path: 'mis-pedidos/por-entregar',
+              name: 'NuevoPedido1-5DIAS',
+              path: 'nuevoPedido15DIAS',
               requireAuth: true,
-              builder: (context, params) => PorEntregarEXPRESSWidget(
-                orderId: params.getParam('orderId', ParamType.String),
+              builder: (context, params) => NuevoPedido15DIASWidget(
+                normalOrderId:
+                    params.getParam('normalOrderId', ParamType.String),
               ),
             ),
             FFRoute(
@@ -230,15 +239,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => OnboardingWidget(),
             ),
             FFRoute(
-              name: 'Registro',
-              path: 'registro',
-              builder: (context, params) => RegistroWidget(),
-            ),
-            FFRoute(
               name: 'registro2',
               path: 'registro/documentos',
               requireAuth: true,
               builder: (context, params) => Registro2Widget(),
+            ),
+            FFRoute(
+              name: 'Registro',
+              path: 'registro',
+              builder: (context, params) => RegistroWidget(),
             ),
             FFRoute(
               name: 'registro1',
@@ -344,16 +353,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => CarritoWidget(),
             ),
             FFRoute(
-              name: 'Checkout',
-              path: 'comprar/checkout',
-              requireAuth: true,
-              builder: (context, params) => CheckoutWidget(),
-            ),
-            FFRoute(
               name: 'PedidoCheckout',
               path: 'checkout/resumen-de-pedido',
               requireAuth: true,
               builder: (context, params) => PedidoCheckoutWidget(),
+            ),
+            FFRoute(
+              name: 'Checkout',
+              path: 'comprar/checkout',
+              requireAuth: true,
+              builder: (context, params) => CheckoutWidget(),
             ),
             FFRoute(
               name: 'InfoTransferencia',
@@ -446,15 +455,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'NuevoPedidoRecogerEnTiendaSELLER',
-              path: 'mis-pedidos/nuevo-pedido/recoger-en-tienda',
-              requireAuth: true,
-              builder: (context, params) =>
-                  NuevoPedidoRecogerEnTiendaSELLERWidget(
-                orderId: params.getParam('orderId', ParamType.String),
-              ),
-            ),
-            FFRoute(
               name: 'PedidoListoRecogerEnTiendaSELLER',
               path: 'mis-pedidos/pedido-listo/recoger-en-tienda',
               requireAuth: true,
@@ -488,15 +488,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'NuevoPedido1-5DIAS',
-              path: 'nuevoPedido15DIAS',
-              requireAuth: true,
-              builder: (context, params) => NuevoPedido15DIASWidget(
-                normalOrderId:
-                    params.getParam('normalOrderId', ParamType.String),
-              ),
-            ),
-            FFRoute(
               name: 'PedidoListo1-5DIAS',
               path: 'mis-pedidos/pedido-listo-5-dias',
               requireAuth: true,
@@ -509,6 +500,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               path: 'mis-pedidos/por-entregar-5-dias',
               requireAuth: true,
               builder: (context, params) => PorEntregar15DIASWidget(
+                orderId: params.getParam('orderId', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'NuevoPedidoRecogerEnTiendaSELLER',
+              path: 'mis-pedidos/nuevo-pedido/recoger-en-tienda',
+              requireAuth: true,
+              builder: (context, params) =>
+                  NuevoPedidoRecogerEnTiendaSELLERWidget(
                 orderId: params.getParam('orderId', ParamType.String),
               ),
             ),
@@ -587,19 +587,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ),
             ),
             FFRoute(
-              name: 'IngresaCostoDeEnvioAdmin',
-              path: 'mis-pedidos/ingresar-costo-de-envio-para-admin',
-              requireAuth: true,
-              builder: (context, params) => IngresaCostoDeEnvioAdminWidget(
-                orderId: params.getParam('orderId', ParamType.String),
-              ),
-            ),
-            FFRoute(
               name: 'ProductosPropios',
               path: 'mis-productos/productos-unicos',
               requireAuth: true,
               builder: (context, params) => ProductosPropiosWidget(
                 brand: params.getParam('brand', ParamType.String),
+              ),
+            ),
+            FFRoute(
+              name: 'IngresaCostoDeEnvioAdmin',
+              path: 'mis-pedidos/ingresar-costo-de-envio-para-admin',
+              requireAuth: true,
+              builder: (context, params) => IngresaCostoDeEnvioAdminWidget(
+                orderId: params.getParam('orderId', ParamType.String),
               ),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),

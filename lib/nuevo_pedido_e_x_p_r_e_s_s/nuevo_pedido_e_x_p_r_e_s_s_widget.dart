@@ -98,8 +98,14 @@ class _NuevoPedidoEXPRESSWidgetState extends State<NuevoPedidoEXPRESSWidget> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    await actions.updateOrderDecision(
+                      widget.expressOrderId,
+                      nuevoPedidoEXPRESSOrdersForStoresRecord.bundleId,
+                      'rejected',
+                      '----',
+                    );
+                    context.pop();
                   },
                   text: 'Rechazar Pedido',
                   options: FFButtonOptions(
@@ -129,7 +135,7 @@ class _NuevoPedidoEXPRESSWidgetState extends State<NuevoPedidoEXPRESSWidget> {
                         'accepted',
                         '----',
                       );
-                      context.pushNamed('Home');
+                      context.pop();
                     },
                     text: 'Aceptar Pedido',
                     options: FFButtonOptions(

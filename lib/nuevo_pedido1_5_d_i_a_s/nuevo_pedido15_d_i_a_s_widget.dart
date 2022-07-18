@@ -104,7 +104,7 @@ class _NuevoPedido15DIASWidgetState extends State<NuevoPedido15DIASWidget> {
                       getCurrentTimestamp,
                       getCurrentTimestamp,
                     );
-                    context.pushNamed('Home');
+                    context.pop();
                   },
                   text: 'Rechazar Pedido',
                   options: FFButtonOptions(
@@ -135,7 +135,7 @@ class _NuevoPedido15DIASWidgetState extends State<NuevoPedido15DIASWidget> {
                         getCurrentTimestamp,
                         getCurrentTimestamp,
                       );
-                      context.pushNamed('Home');
+                      context.pop();
                     },
                     text: 'Aceptar Pedido',
                     options: FFButtonOptions(

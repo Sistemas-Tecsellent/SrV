@@ -73,42 +73,48 @@ class _MarcaSingleWidgetState extends State<MarcaSingleWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Expanded(
-                            child: Container(
-                              height: 120,
-                              child: PageView(
-                                controller: pageViewController ??=
-                                    PageController(initialPage: 0),
-                                scrollDirection: Axis.horizontal,
-                                children: [
-                                  Align(
-                                    alignment: AlignmentDirectional(0, -1),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(10),
-                                      child: Image.network(
-                                        'https://www.cemaco.com/arquivos/2021_banner_pretul-10.png?v=637612936891500000',
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.95,
-                                        height: 100,
-                                        fit: BoxFit.cover,
+                            child: Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 0, 0, 20),
+                              child: Container(
+                                height: 250,
+                                child: PageView(
+                                  controller: pageViewController ??=
+                                      PageController(initialPage: 0),
+                                  scrollDirection: Axis.horizontal,
+                                  children: [
+                                    Align(
+                                      alignment: AlignmentDirectional(0, -1),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(10),
+                                        child: Image.network(
+                                          'https://www.cemaco.com/arquivos/2021_banner_pretul-10.png?v=637612936891500000',
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.95,
+                                          height: 250,
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                  Align(
-                                    alignment: AlignmentDirectional(0, -1),
-                                    child: ClipRRect(
-                                      borderRadius: BorderRadius.circular(20),
-                                      child: Image.network(
-                                        'https://tecshopsystems.com/LAGACERO/images/ferreteria/banner1.jpg',
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.95,
-                                        height: 100,
-                                        fit: BoxFit.cover,
+                                    Align(
+                                      alignment: AlignmentDirectional(0, -1),
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+                                        child: Image.network(
+                                          'https://tecshopsystems.com/LAGACERO/images/ferreteria/banner1.jpg',
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width *
+                                              0.95,
+                                          height: 100,
+                                          fit: BoxFit.cover,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                           ),

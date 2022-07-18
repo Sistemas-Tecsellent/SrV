@@ -111,8 +111,8 @@ class _IngresaCostoDeEnvioWidgetState extends State<IngresaCostoDeEnvioWidget> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    context.pop();
                   },
                   text: 'Cancelar',
                   options: FFButtonOptions(

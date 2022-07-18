@@ -591,8 +591,8 @@ class _PedidoFinalWidgetState extends State<PedidoFinalWidget> {
                                                   decoration: BoxDecoration(
                                                     shape: BoxShape.circle,
                                                   ),
-                                                  child: Image.asset(
-                                                    'assets/images/3D_Elements_(2).png',
+                                                  child: Image.network(
+                                                    'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sr-construccion-proveedor-0talpe/assets/rpsoenxxu4se/3D_Elements_(2).png',
                                                     fit: BoxFit.contain,
                                                   ),
                                                 ),

@@ -114,8 +114,8 @@ class _PedidoListoSELLER5DIASWidgetState
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    context.pop();
                   },
                   text: 'Cancelar',
                   options: FFButtonOptions(
@@ -180,7 +180,7 @@ class _PedidoListoSELLER5DIASWidgetState
                         pedidoListoSELLER5DIASOrdersForStoresRecord.id,
                         'onRoute',
                       );
-                      context.pushNamed('Home');
+                      context.pop();
                     },
                     text: 'Enviar Pedido',
                     options: FFButtonOptions(

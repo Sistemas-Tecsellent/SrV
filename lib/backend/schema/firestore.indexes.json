@@ -51,6 +51,10 @@
           "order": "ASCENDING"
         },
         {
+          "fieldPath": "owner",
+          "order": "ASCENDING"
+        },
+        {
           "fieldPath": "stores",
           "arrayConfig": "CONTAINS"
         }
@@ -83,6 +87,10 @@
           "order": "ASCENDING"
         },
         {
+          "fieldPath": "owner",
+          "order": "ASCENDING"
+        },
+        {
           "fieldPath": "stores",
           "arrayConfig": "CONTAINS"
         }
@@ -98,10 +106,28 @@
         },
         {
           "fieldPath": "brand",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "owner",
           "order": "ASCENDING"
         },
         {
           "fieldPath": "soldBy",
+          "arrayConfig": "CONTAINS"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "products",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "brand",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "stores",
           "arrayConfig": "CONTAINS"
         }
       ]

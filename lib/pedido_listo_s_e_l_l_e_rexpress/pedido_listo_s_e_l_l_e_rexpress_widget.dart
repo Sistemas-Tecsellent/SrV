@@ -103,8 +103,8 @@ class _PedidoListoSELLERexpressWidgetState
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    context.pop();
                   },
                   text: 'Cancelar',
                   options: FFButtonOptions(
@@ -145,13 +145,13 @@ class _PedidoListoSELLERexpressWidgetState
                           pedidoListoSELLERexpressOrdersForStoresRecord
                               .bundleId,
                         );
-                        context.pushNamed('Home');
+                        context.pop();
                       } else {
                         await actions.enablePickupOfOrder(
                           pedidoListoSELLERexpressOrdersForStoresRecord
                               .bundleId,
                         );
-                        context.pushNamed('Home');
+                        context.pop();
                       }
                     },
                     text: 'Enviar Pedido',

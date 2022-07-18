@@ -141,7 +141,6 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
                   children: [
                     if (responsiveVisibility(
                       context: context,
-                      tablet: false,
                       tabletLandscape: false,
                       desktop: false,
                     ))
@@ -382,24 +381,44 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
                                       ),
                                       Stack(
                                         children: [
-                                          Text(
-                                            'Sin Listar',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyText1
-                                                .override(
-                                                  fontFamily: 'Montserrat',
-                                                  color: Color(0xFFC9C6C6),
-                                                ),
-                                          ),
-                                          Text(
-                                            'Listado',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyText1
-                                                .override(
-                                                  fontFamily: 'Montserrat',
-                                                  color: Color(0xFFFDC054),
-                                                ),
-                                          ),
+                                          if (!(productPageProductsRecord.soldBy
+                                                  .toList()
+                                                  .contains(valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.storeId,
+                                                      ''))) ??
+                                              true)
+                                            AuthUserStreamWidget(
+                                              child: Text(
+                                                'Sin Listar',
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyText1
+                                                    .override(
+                                                      fontFamily: 'Montserrat',
+                                                      color: Color(0xFFC9C6C6),
+                                                    ),
+                                              ),
+                                            ),
+                                          if (productPageProductsRecord.soldBy
+                                                  .toList()
+                                                  ?.contains(valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.storeId,
+                                                      '')) ??
+                                              true)
+                                            AuthUserStreamWidget(
+                                              child: Text(
+                                                'Listado',
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyText1
+                                                    .override(
+                                                      fontFamily: 'Montserrat',
+                                                      color: Color(0xFFFDC054),
+                                                    ),
+                                              ),
+                                            ),
                                         ],
                                       ),
                                     ],
@@ -495,24 +514,44 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
                                       ),
                                       Stack(
                                         children: [
-                                          Text(
-                                            'No disponible',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyText1
-                                                .override(
-                                                  fontFamily: 'Montserrat',
-                                                  color: Color(0xFFC9C6C6),
-                                                ),
-                                          ),
-                                          Text(
-                                            'Disponible',
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyText1
-                                                .override(
-                                                  fontFamily: 'Montserrat',
-                                                  color: Color(0xFFFDC054),
-                                                ),
-                                          ),
+                                          if (!(productPageProductsRecord.stores
+                                                  .toList()
+                                                  .contains(valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.storeId,
+                                                      ''))) ??
+                                              true)
+                                            AuthUserStreamWidget(
+                                              child: Text(
+                                                'No disponible',
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyText1
+                                                    .override(
+                                                      fontFamily: 'Montserrat',
+                                                      color: Color(0xFFC9C6C6),
+                                                    ),
+                                              ),
+                                            ),
+                                          if (productPageProductsRecord.stores
+                                                  .toList()
+                                                  ?.contains(valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.storeId,
+                                                      '')) ??
+                                              true)
+                                            AuthUserStreamWidget(
+                                              child: Text(
+                                                'Disponible',
+                                                style: FlutterFlowTheme.of(
+                                                        context)
+                                                    .bodyText1
+                                                    .override(
+                                                      fontFamily: 'Montserrat',
+                                                      color: Color(0xFFFDC054),
+                                                    ),
+                                              ),
+                                            ),
                                         ],
                                       ),
                                     ],
@@ -839,467 +878,550 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
                           ],
                         ),
                       ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width * 0.4,
-                          height: 500,
-                          decoration: BoxDecoration(
-                            color: Color(0x00EEEEEE),
-                          ),
-                          child: Image.network(
-                            valueOrDefault<String>(
-                              productPageProductsRecord.mainImage,
-                              'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset.png?alt=media&token=85f6129c-7ee9-4db8-87ae-2e1adc4e010a',
+                    if (responsiveVisibility(
+                      context: context,
+                      phone: false,
+                      tablet: false,
+                    ))
+                      Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            width: MediaQuery.of(context).size.width * 0.4,
+                            height: 500,
+                            decoration: BoxDecoration(
+                              color: Color(0x00EEEEEE),
                             ),
-                            width: 100,
-                            height: 100,
-                            fit: BoxFit.contain,
+                            child: Image.network(
+                              valueOrDefault<String>(
+                                productPageProductsRecord.mainImage,
+                                'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FAsset.png?alt=media&token=85f6129c-7ee9-4db8-87ae-2e1adc4e010a',
+                              ),
+                              width: 100,
+                              height: 100,
+                              fit: BoxFit.contain,
+                            ),
                           ),
-                        ),
-                        SingleChildScrollView(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.5,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      blurRadius: 0,
-                                      color: Colors.transparent,
-                                      offset: Offset(0, 0),
-                                    )
-                                  ],
-                                  borderRadius: BorderRadius.only(
-                                    bottomLeft: Radius.circular(0),
-                                    bottomRight: Radius.circular(0),
-                                    topLeft: Radius.circular(20),
-                                    topRight: Radius.circular(20),
+                          SingleChildScrollView(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.5,
+                                  decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 0,
+                                        color: Colors.transparent,
+                                        offset: Offset(0, 0),
+                                      )
+                                    ],
+                                    borderRadius: BorderRadius.only(
+                                      bottomLeft: Radius.circular(0),
+                                      bottomRight: Radius.circular(0),
+                                      topLeft: Radius.circular(20),
+                                      topRight: Radius.circular(20),
+                                    ),
                                   ),
-                                ),
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      20, 20, 20, 0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        productPageProductsRecord.title,
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyText1
-                                            .override(
-                                              fontFamily: 'Montserrat',
-                                              fontSize: 22,
-                                            ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 5, 20, 0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.end,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 5, 0),
-                                              child: Text(
-                                                'Marca',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyText1
-                                                        .override(
-                                                          fontFamily:
-                                                              'Montserrat',
-                                                          fontSize: 15,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
+                                  child: Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        20, 20, 20, 0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          productPageProductsRecord.title,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyText1
+                                              .override(
+                                                fontFamily: 'Montserrat',
+                                                fontSize: 22,
                                               ),
-                                            ),
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                borderRadius:
-                                                    BorderRadius.circular(50),
-                                                border: Border.all(
-                                                  color: Color(0x00656565),
-                                                ),
-                                              ),
-                                              child: Padding(
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 5, 20, 0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.end,
+                                            children: [
+                                              Padding(
                                                 padding: EdgeInsetsDirectional
-                                                    .fromSTEB(10, 0, 10, 0),
+                                                    .fromSTEB(0, 0, 5, 0),
                                                 child: Text(
-                                                  productPageProductsRecord
-                                                      .brand,
+                                                  'Marca',
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .bodyText1
                                                       .override(
                                                         fontFamily:
                                                             'Montserrat',
+                                                        fontSize: 15,
                                                         fontWeight:
                                                             FontWeight.normal,
                                                       ),
                                                 ),
                                               ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0, 5, 20, 0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          children: [
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(0, 0, 5, 0),
-                                              child: Text(
-                                                'SKU',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
+                                              Container(
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  borderRadius:
+                                                      BorderRadius.circular(50),
+                                                  border: Border.all(
+                                                    color: Color(0x00656565),
+                                                  ),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(10, 0, 10, 0),
+                                                  child: Text(
+                                                    productPageProductsRecord
+                                                        .brand,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
                                                         .bodyText1
                                                         .override(
                                                           fontFamily:
                                                               'Montserrat',
-                                                          fontSize: 15,
                                                           fontWeight:
                                                               FontWeight.normal,
                                                         ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0, 5, 20, 0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(0, 0, 5, 0),
+                                                child: Text(
+                                                  'SKU',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyText1
+                                                      .override(
+                                                        fontFamily:
+                                                            'Montserrat',
+                                                        fontSize: 15,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                      ),
+                                                ),
+                                              ),
+                                              Text(
+                                                productPageProductsRecord.sku,
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyText1,
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      20, 0, 20, 0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          InkWell(
+                                            onTap: () async {
+                                              await Future.delayed(
+                                                  const Duration(
+                                                      milliseconds: 1000));
+                                              if (productPageProductsRecord
+                                                  .stores
+                                                  .toList()
+                                                  .contains(valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.storeId,
+                                                      ''))) {
+                                                await AddToRecentlyAddedCall
+                                                    .call(
+                                                  productId:
+                                                      productPageProductsRecord
+                                                          .id,
+                                                  sellerId: valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.sellerId,
+                                                      ''),
+                                                );
+                                              }
+                                            },
+                                            child: Container(
+                                              width: 60,
+                                              height: 60,
+                                              decoration: BoxDecoration(
+                                                color: Color(0x00F9F9F9),
+                                              ),
+                                              alignment:
+                                                  AlignmentDirectional(-1, 0),
+                                              child: AuthUserStreamWidget(
+                                                child: ToggleIcon(
+                                                  onPressed: () async {
+                                                    final soldByElement =
+                                                        valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.storeId,
+                                                            '');
+                                                    final soldByUpdate =
+                                                        productPageProductsRecord
+                                                                .soldBy
+                                                                .toList()
+                                                                .contains(
+                                                                    soldByElement)
+                                                            ? FieldValue
+                                                                .arrayRemove([
+                                                                soldByElement
+                                                              ])
+                                                            : FieldValue
+                                                                .arrayUnion([
+                                                                soldByElement
+                                                              ]);
+                                                    final productsUpdateData = {
+                                                      'soldBy': soldByUpdate,
+                                                    };
+                                                    await productPageProductsRecord
+                                                        .reference
+                                                        .update(
+                                                            productsUpdateData);
+                                                  },
+                                                  value: productPageProductsRecord
+                                                      .soldBy
+                                                      .toList()
+                                                      .contains(valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.storeId,
+                                                          '')),
+                                                  onIcon: Icon(
+                                                    Icons.toggle_on_rounded,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryColor,
+                                                    size: 43,
+                                                  ),
+                                                  offIcon: Icon(
+                                                    Icons.toggle_off_outlined,
+                                                    color: Color(0xFFC9C6C6),
+                                                    size: 43,
+                                                  ),
+                                                ),
                                               ),
                                             ),
-                                            Text(
-                                              productPageProductsRecord.sku,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyText1,
-                                            ),
-                                          ],
-                                        ),
+                                          ),
+                                          Stack(
+                                            children: [
+                                              if (!(productPageProductsRecord
+                                                      .soldBy
+                                                      .toList()
+                                                      .contains(valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.storeId,
+                                                          ''))) ??
+                                                  true)
+                                                AuthUserStreamWidget(
+                                                  child: Text(
+                                                    'Sin Listar',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          color:
+                                                              Color(0xFFC9C6C6),
+                                                        ),
+                                                  ),
+                                                ),
+                                              if (productPageProductsRecord
+                                                      .soldBy
+                                                      .toList()
+                                                      ?.contains(valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.storeId,
+                                                          '')) ??
+                                                  true)
+                                                AuthUserStreamWidget(
+                                                  child: Text(
+                                                    'Listado',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          color:
+                                                              Color(0xFFFDC054),
+                                                        ),
+                                                  ),
+                                                ),
+                                            ],
+                                          ),
+                                        ],
                                       ),
                                     ],
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    20, 0, 20, 0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        InkWell(
-                                          onTap: () async {
-                                            await Future.delayed(const Duration(
-                                                milliseconds: 1000));
-                                            if (productPageProductsRecord.stores
-                                                .toList()
-                                                .contains(valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.storeId,
-                                                    ''))) {
-                                              await AddToRecentlyAddedCall.call(
-                                                productId:
-                                                    productPageProductsRecord
-                                                        .id,
-                                                sellerId: valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.sellerId,
-                                                    ''),
-                                              );
-                                            }
-                                          },
-                                          child: Container(
-                                            width: 60,
-                                            height: 60,
-                                            decoration: BoxDecoration(
-                                              color: Color(0x00F9F9F9),
-                                            ),
-                                            alignment:
-                                                AlignmentDirectional(-1, 0),
-                                            child: AuthUserStreamWidget(
-                                              child: ToggleIcon(
-                                                onPressed: () async {
-                                                  final soldByElement =
-                                                      valueOrDefault(
-                                                          currentUserDocument
-                                                              ?.storeId,
-                                                          '');
-                                                  final soldByUpdate =
-                                                      productPageProductsRecord
-                                                              .soldBy
-                                                              .toList()
-                                                              .contains(
-                                                                  soldByElement)
-                                                          ? FieldValue
-                                                              .arrayRemove([
-                                                              soldByElement
-                                                            ])
-                                                          : FieldValue
-                                                              .arrayUnion([
-                                                              soldByElement
-                                                            ]);
-                                                  final productsUpdateData = {
-                                                    'soldBy': soldByUpdate,
-                                                  };
-                                                  await productPageProductsRecord
-                                                      .reference
-                                                      .update(
-                                                          productsUpdateData);
-                                                },
-                                                value: productPageProductsRecord
-                                                    .soldBy
-                                                    .toList()
-                                                    .contains(valueOrDefault(
-                                                        currentUserDocument
-                                                            ?.storeId,
-                                                        '')),
-                                                onIcon: Icon(
-                                                  Icons.toggle_on_rounded,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryColor,
-                                                  size: 43,
-                                                ),
-                                                offIcon: Icon(
-                                                  Icons.toggle_off_outlined,
-                                                  color: Color(0xFFC9C6C6),
-                                                  size: 43,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Stack(
-                                          children: [
-                                            Text(
-                                              'Sin Listar',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyText1
-                                                  .override(
-                                                    fontFamily: 'Montserrat',
-                                                    color: Color(0xFFC9C6C6),
-                                                  ),
-                                            ),
-                                            Text(
-                                              'Listado',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyText1
-                                                  .override(
-                                                    fontFamily: 'Montserrat',
-                                                    color: Color(0xFFFDC054),
-                                                  ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    20, 10, 20, 0),
-                                child: Row(
-                                  mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        InkWell(
-                                          onTap: () async {
-                                            await Future.delayed(const Duration(
-                                                milliseconds: 1000));
-                                            if (productPageProductsRecord.stores
-                                                .toList()
-                                                .contains(valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.storeId,
-                                                    ''))) {
-                                              await AddToRecentlyAddedCall.call(
-                                                productId:
-                                                    productPageProductsRecord
-                                                        .id,
-                                                sellerId: valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.sellerId,
-                                                    ''),
-                                              );
-                                            }
-                                          },
-                                          child: Container(
-                                            width: 60,
-                                            height: 60,
-                                            decoration: BoxDecoration(
-                                              color: Color(0x00F9F9F9),
-                                            ),
-                                            alignment:
-                                                AlignmentDirectional(-1, 0),
-                                            child: AuthUserStreamWidget(
-                                              child: ToggleIcon(
-                                                onPressed: () async {
-                                                  final storesElement =
-                                                      valueOrDefault(
-                                                          currentUserDocument
-                                                              ?.storeId,
-                                                          '');
-                                                  final storesUpdate =
-                                                      productPageProductsRecord
-                                                              .stores
-                                                              .toList()
-                                                              .contains(
-                                                                  storesElement)
-                                                          ? FieldValue
-                                                              .arrayRemove([
-                                                              storesElement
-                                                            ])
-                                                          : FieldValue
-                                                              .arrayUnion([
-                                                              storesElement
-                                                            ]);
-                                                  final productsUpdateData = {
-                                                    'stores': storesUpdate,
-                                                  };
-                                                  await productPageProductsRecord
-                                                      .reference
-                                                      .update(
-                                                          productsUpdateData);
-                                                },
-                                                value: productPageProductsRecord
-                                                    .stores
-                                                    .toList()
-                                                    .contains(valueOrDefault(
-                                                        currentUserDocument
-                                                            ?.storeId,
-                                                        '')),
-                                                onIcon: Icon(
-                                                  Icons.toggle_on_rounded,
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryColor,
-                                                  size: 43,
-                                                ),
-                                                offIcon: Icon(
-                                                  Icons.toggle_off_outlined,
-                                                  color: Color(0xFFC9C6C6),
-                                                  size: 43,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        Stack(
-                                          children: [
-                                            Text(
-                                              'No disponible',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyText1
-                                                  .override(
-                                                    fontFamily: 'Montserrat',
-                                                    color: Color(0xFFC9C6C6),
-                                                  ),
-                                            ),
-                                            Text(
-                                              'Disponible para venta',
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .bodyText1
-                                                  .override(
-                                                    fontFamily: 'Montserrat',
-                                                    color: Color(0xFFFDC054),
-                                                  ),
-                                            ),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Builder(
-                                builder: (context) {
-                                  final variantsInventoryDisplayed =
-                                      FFAppState()
-                                              .variantsInventories
-                                              ?.toList() ??
-                                          [];
-                                  return Column(
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      20, 10, 20, 0),
+                                  child: Row(
                                     mainAxisSize: MainAxisSize.max,
-                                    children: List.generate(
-                                        variantsInventoryDisplayed.length,
-                                        (variantsInventoryDisplayedIndex) {
-                                      final variantsInventoryDisplayedItem =
-                                          variantsInventoryDisplayed[
-                                              variantsInventoryDisplayedIndex];
-                                      return Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Row(
                                         mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceEvenly,
                                         children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    20, 0, 20, 10),
+                                          InkWell(
+                                            onTap: () async {
+                                              await Future.delayed(
+                                                  const Duration(
+                                                      milliseconds: 1000));
+                                              if (productPageProductsRecord
+                                                  .stores
+                                                  .toList()
+                                                  .contains(valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.storeId,
+                                                      ''))) {
+                                                await AddToRecentlyAddedCall
+                                                    .call(
+                                                  productId:
+                                                      productPageProductsRecord
+                                                          .id,
+                                                  sellerId: valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.sellerId,
+                                                      ''),
+                                                );
+                                              }
+                                            },
                                             child: Container(
-                                              width: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                  0.5,
+                                              width: 60,
+                                              height: 60,
                                               decoration: BoxDecoration(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                boxShadow: [
-                                                  BoxShadow(
-                                                    blurRadius: 0,
-                                                    color: Color(0x14000000),
-                                                  )
-                                                ],
-                                                borderRadius:
-                                                    BorderRadius.circular(5),
+                                                color: Color(0x00F9F9F9),
                                               ),
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(25, 20, 25, 20),
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.end,
-                                                  children: [
-                                                    Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      children: [
-                                                        Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(0,
-                                                                      0, 5, 0),
-                                                          child: Text(
-                                                            'Unidad',
+                                              alignment:
+                                                  AlignmentDirectional(-1, 0),
+                                              child: AuthUserStreamWidget(
+                                                child: ToggleIcon(
+                                                  onPressed: () async {
+                                                    final storesElement =
+                                                        valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.storeId,
+                                                            '');
+                                                    final storesUpdate =
+                                                        productPageProductsRecord
+                                                                .stores
+                                                                .toList()
+                                                                .contains(
+                                                                    storesElement)
+                                                            ? FieldValue
+                                                                .arrayRemove([
+                                                                storesElement
+                                                              ])
+                                                            : FieldValue
+                                                                .arrayUnion([
+                                                                storesElement
+                                                              ]);
+                                                    final productsUpdateData = {
+                                                      'stores': storesUpdate,
+                                                    };
+                                                    await productPageProductsRecord
+                                                        .reference
+                                                        .update(
+                                                            productsUpdateData);
+                                                  },
+                                                  value: productPageProductsRecord
+                                                      .stores
+                                                      .toList()
+                                                      .contains(valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.storeId,
+                                                          '')),
+                                                  onIcon: Icon(
+                                                    Icons.toggle_on_rounded,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryColor,
+                                                    size: 43,
+                                                  ),
+                                                  offIcon: Icon(
+                                                    Icons.toggle_off_outlined,
+                                                    color: Color(0xFFC9C6C6),
+                                                    size: 43,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                          Stack(
+                                            children: [
+                                              if (!(productPageProductsRecord
+                                                      .stores
+                                                      .toList()
+                                                      .contains(valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.storeId,
+                                                          ''))) ??
+                                                  true)
+                                                AuthUserStreamWidget(
+                                                  child: Text(
+                                                    'No disponible',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          color:
+                                                              Color(0xFFC9C6C6),
+                                                        ),
+                                                  ),
+                                                ),
+                                              if (productPageProductsRecord
+                                                      .stores
+                                                      .toList()
+                                                      ?.contains(valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.storeId,
+                                                          '')) ??
+                                                  true)
+                                                AuthUserStreamWidget(
+                                                  child: Text(
+                                                    'Disponible para venta',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyText1
+                                                        .override(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          color:
+                                                              Color(0xFFFDC054),
+                                                        ),
+                                                  ),
+                                                ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Builder(
+                                  builder: (context) {
+                                    final variantsInventoryDisplayed =
+                                        FFAppState()
+                                                .variantsInventories
+                                                ?.toList() ??
+                                            [];
+                                    return Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: List.generate(
+                                          variantsInventoryDisplayed.length,
+                                          (variantsInventoryDisplayedIndex) {
+                                        final variantsInventoryDisplayedItem =
+                                            variantsInventoryDisplayed[
+                                                variantsInventoryDisplayedIndex];
+                                        return Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceEvenly,
+                                          children: [
+                                            Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(20, 0, 20, 10),
+                                              child: Container(
+                                                width: MediaQuery.of(context)
+                                                        .size
+                                                        .width *
+                                                    0.5,
+                                                decoration: BoxDecoration(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondaryBackground,
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                      blurRadius: 0,
+                                                      color: Color(0x14000000),
+                                                    )
+                                                  ],
+                                                  borderRadius:
+                                                      BorderRadius.circular(5),
+                                                ),
+                                                child: Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(25, 20, 25, 20),
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment.end,
+                                                    children: [
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0,
+                                                                        0,
+                                                                        5,
+                                                                        0),
+                                                            child: Text(
+                                                              'Unidad',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyText1
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Montserrat',
+                                                                    fontSize:
+                                                                        16,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .normal,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                          Text(
+                                                            getJsonField(
+                                                              variantsInventoryDisplayedItem,
+                                                              r'''$.unit''',
+                                                            ).toString(),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyText1
@@ -1307,77 +1429,32 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
                                                                   fontFamily:
                                                                       'Montserrat',
                                                                   fontSize: 16,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .normal,
                                                                 ),
                                                           ),
-                                                        ),
-                                                        Text(
-                                                          getJsonField(
-                                                            variantsInventoryDisplayedItem,
-                                                            r'''$.unit''',
-                                                          ).toString(),
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyText1
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Montserrat',
-                                                                fontSize: 16,
-                                                              ),
-                                                        ),
-                                                      ],
-                                                    ),
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0, 5, 0, 0),
-                                                      child: Row(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceBetween,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            children: [
-                                                              Text(
-                                                                'Inventario',
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyText1
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Montserrat',
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primaryText,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .normal,
-                                                                    ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            5,
-                                                                            0,
-                                                                            0,
-                                                                            0),
-                                                                child: Text(
-                                                                  getJsonField(
-                                                                    variantsInventoryDisplayedItem,
-                                                                    r'''$.inventory''',
-                                                                  ).toString(),
+                                                        ],
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0, 5, 0, 0),
+                                                        child: Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .spaceBetween,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              children: [
+                                                                Text(
+                                                                  'Inventario',
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
                                                                       .bodyText1
@@ -1386,165 +1463,184 @@ class _ProductPageWidgetState extends State<ProductPageWidget> {
                                                                             'Montserrat',
                                                                         color: FlutterFlowTheme.of(context)
                                                                             .primaryText,
+                                                                        fontWeight:
+                                                                            FontWeight.normal,
                                                                       ),
                                                                 ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                          Container(
-                                                            width: MediaQuery.of(
-                                                                        context)
-                                                                    .size
-                                                                    .width *
-                                                                0.3,
-                                                            constraints:
-                                                                BoxConstraints(
-                                                              maxWidth: 100,
-                                                            ),
-                                                            decoration:
-                                                                BoxDecoration(),
-                                                            child:
-                                                                FFButtonWidget(
-                                                              onPressed:
-                                                                  () async {
-                                                                context
-                                                                    .pushNamed(
-                                                                  'VariantInventory',
-                                                                  params: {
-                                                                    'productId': serializeParam(
-                                                                        widget
-                                                                            .productId,
-                                                                        ParamType
-                                                                            .String),
-                                                                  }.withoutNulls,
-                                                                  queryParams: {
-                                                                    'productTitle': serializeParam(
-                                                                        productPageProductsRecord
-                                                                            .title,
-                                                                        ParamType
-                                                                            .String),
-                                                                    'unit': serializeParam(
-                                                                        getJsonField(
-                                                                          variantsInventoryDisplayedItem,
-                                                                          r'''$.unit''',
-                                                                        ).toString(),
-                                                                        ParamType.String),
-                                                                    'initialInventory':
-                                                                        serializeParam(
-                                                                            getJsonField(
-                                                                              variantsInventoryDisplayedItem,
-                                                                              r'''$.inventory''',
-                                                                            ),
-                                                                            ParamType.int),
-                                                                    'publicPriceEnabled':
-                                                                        serializeParam(
-                                                                            getJsonField(
-                                                                              variantsInventoryDisplayedItem,
-                                                                              r'''$.publicPriceEnabled''',
-                                                                            ),
-                                                                            ParamType.bool),
-                                                                    'wholesalePriceEnabled':
-                                                                        serializeParam(
-                                                                            getJsonField(
-                                                                              variantsInventoryDisplayedItem,
-                                                                              r'''$.wholesalePriceEnabled''',
-                                                                            ),
-                                                                            ParamType.bool),
-                                                                    'megaWholesalePriceEnabled':
-                                                                        serializeParam(
-                                                                            getJsonField(
-                                                                              variantsInventoryDisplayedItem,
-                                                                              r'''$.megaWholesalePriceEnabled''',
-                                                                            ),
-                                                                            ParamType.bool),
-                                                                    'discount1Enabled':
-                                                                        serializeParam(
-                                                                            getJsonField(
-                                                                              variantsInventoryDisplayedItem,
-                                                                              r'''$.discount1Enabled''',
-                                                                            ),
-                                                                            ParamType.bool),
-                                                                    'discount2Enabled':
-                                                                        serializeParam(
-                                                                            getJsonField(
-                                                                              variantsInventoryDisplayedItem,
-                                                                              r'''$.discount2Enabled''',
-                                                                            ),
-                                                                            ParamType.bool),
-                                                                    'discount3Enabled':
-                                                                        serializeParam(
-                                                                            getJsonField(
-                                                                              variantsInventoryDisplayedItem,
-                                                                              r'''$.discount3Enabled''',
-                                                                            ),
-                                                                            ParamType.bool),
-                                                                    'variantId': serializeParam(
-                                                                        getJsonField(
-                                                                          variantsInventoryDisplayedItem,
-                                                                          r'''$.id''',
-                                                                        ).toString(),
-                                                                        ParamType.String),
-                                                                  }.withoutNulls,
-                                                                );
-                                                              },
-                                                              text: 'Modificar',
-                                                              options:
-                                                                  FFButtonOptions(
-                                                                width: 100,
-                                                                height: 40,
-                                                                color: Color(
-                                                                    0xACE9E9E9),
-                                                                textStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .subtitle2
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Montserrat',
-                                                                      color: Colors
-                                                                          .black,
-                                                                      fontSize:
-                                                                          14,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .normal,
-                                                                    ),
-                                                                elevation: 0,
-                                                                borderSide:
-                                                                    BorderSide(
-                                                                  color: Colors
-                                                                      .transparent,
-                                                                  width: 1,
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          5,
+                                                                          0,
+                                                                          0,
+                                                                          0),
+                                                                  child: Text(
+                                                                    getJsonField(
+                                                                      variantsInventoryDisplayedItem,
+                                                                      r'''$.inventory''',
+                                                                    ).toString(),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyText1
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Montserrat',
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).primaryText,
+                                                                        ),
+                                                                  ),
                                                                 ),
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            5),
+                                                              ],
+                                                            ),
+                                                            Container(
+                                                              width: MediaQuery.of(
+                                                                          context)
+                                                                      .size
+                                                                      .width *
+                                                                  0.3,
+                                                              constraints:
+                                                                  BoxConstraints(
+                                                                maxWidth: 100,
+                                                              ),
+                                                              decoration:
+                                                                  BoxDecoration(),
+                                                              child:
+                                                                  FFButtonWidget(
+                                                                onPressed:
+                                                                    () async {
+                                                                  context
+                                                                      .pushNamed(
+                                                                    'VariantInventory',
+                                                                    params: {
+                                                                      'productId': serializeParam(
+                                                                          widget
+                                                                              .productId,
+                                                                          ParamType
+                                                                              .String),
+                                                                    }.withoutNulls,
+                                                                    queryParams:
+                                                                        {
+                                                                      'productTitle': serializeParam(
+                                                                          productPageProductsRecord
+                                                                              .title,
+                                                                          ParamType
+                                                                              .String),
+                                                                      'unit': serializeParam(
+                                                                          getJsonField(
+                                                                            variantsInventoryDisplayedItem,
+                                                                            r'''$.unit''',
+                                                                          ).toString(),
+                                                                          ParamType.String),
+                                                                      'initialInventory': serializeParam(
+                                                                          getJsonField(
+                                                                            variantsInventoryDisplayedItem,
+                                                                            r'''$.inventory''',
+                                                                          ),
+                                                                          ParamType.int),
+                                                                      'publicPriceEnabled': serializeParam(
+                                                                          getJsonField(
+                                                                            variantsInventoryDisplayedItem,
+                                                                            r'''$.publicPriceEnabled''',
+                                                                          ),
+                                                                          ParamType.bool),
+                                                                      'wholesalePriceEnabled': serializeParam(
+                                                                          getJsonField(
+                                                                            variantsInventoryDisplayedItem,
+                                                                            r'''$.wholesalePriceEnabled''',
+                                                                          ),
+                                                                          ParamType.bool),
+                                                                      'megaWholesalePriceEnabled': serializeParam(
+                                                                          getJsonField(
+                                                                            variantsInventoryDisplayedItem,
+                                                                            r'''$.megaWholesalePriceEnabled''',
+                                                                          ),
+                                                                          ParamType.bool),
+                                                                      'discount1Enabled': serializeParam(
+                                                                          getJsonField(
+                                                                            variantsInventoryDisplayedItem,
+                                                                            r'''$.discount1Enabled''',
+                                                                          ),
+                                                                          ParamType.bool),
+                                                                      'discount2Enabled': serializeParam(
+                                                                          getJsonField(
+                                                                            variantsInventoryDisplayedItem,
+                                                                            r'''$.discount2Enabled''',
+                                                                          ),
+                                                                          ParamType.bool),
+                                                                      'discount3Enabled': serializeParam(
+                                                                          getJsonField(
+                                                                            variantsInventoryDisplayedItem,
+                                                                            r'''$.discount3Enabled''',
+                                                                          ),
+                                                                          ParamType.bool),
+                                                                      'variantId': serializeParam(
+                                                                          getJsonField(
+                                                                            variantsInventoryDisplayedItem,
+                                                                            r'''$.id''',
+                                                                          ).toString(),
+                                                                          ParamType.String),
+                                                                    }.withoutNulls,
+                                                                  );
+                                                                },
+                                                                text:
+                                                                    'Modificar',
+                                                                options:
+                                                                    FFButtonOptions(
+                                                                  width: 100,
+                                                                  height: 40,
+                                                                  color: Color(
+                                                                      0xACE9E9E9),
+                                                                  textStyle: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .subtitle2
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Montserrat',
+                                                                        color: Colors
+                                                                            .black,
+                                                                        fontSize:
+                                                                            14,
+                                                                        fontWeight:
+                                                                            FontWeight.normal,
+                                                                      ),
+                                                                  elevation: 0,
+                                                                  borderSide:
+                                                                      BorderSide(
+                                                                    color: Colors
+                                                                        .transparent,
+                                                                    width: 1,
+                                                                  ),
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              5),
+                                                                ),
                                                               ),
                                                             ),
-                                                          ),
-                                                        ],
+                                                          ],
+                                                        ),
                                                       ),
-                                                    ),
-                                                    Divider(
-                                                      height: 2,
-                                                      color: Color(0x62000000),
-                                                    ),
-                                                  ],
+                                                      Divider(
+                                                        height: 2,
+                                                        color:
+                                                            Color(0x62000000),
+                                                      ),
+                                                    ],
+                                                  ),
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                        ],
-                                      );
-                                    }),
-                                  );
-                                },
-                              ),
-                            ],
+                                          ],
+                                        );
+                                      }),
+                                    );
+                                  },
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
+                        ],
+                      ),
                   ],
                 ),
               ),

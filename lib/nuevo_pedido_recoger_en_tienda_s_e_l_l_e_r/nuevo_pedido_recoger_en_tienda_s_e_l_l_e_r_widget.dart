@@ -99,8 +99,12 @@ class _NuevoPedidoRecogerEnTiendaSELLERWidgetState
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    await actions.updatePickupInStoreOrderDecision(
+                      widget.orderId,
+                      'rejected',
+                    );
+                    context.pop();
                   },
                   text: 'Rechazar Pedido',
                   options: FFButtonOptions(
@@ -128,7 +132,7 @@ class _NuevoPedidoRecogerEnTiendaSELLERWidgetState
                         widget.orderId,
                         'accepted',
                       );
-                      context.pushNamed('Home');
+                      context.pop();
                     },
                     text: 'Aceptar Pedido',
                     options: FFButtonOptions(

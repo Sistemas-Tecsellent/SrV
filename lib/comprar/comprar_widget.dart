@@ -128,8 +128,8 @@ class _ComprarWidgetState extends State<ComprarWidget> {
                     color: Color(0xFFEEEEEE),
                     image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: Image.asset(
-                        'assets/images/Headers.png',
+                      image: Image.network(
+                        'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/Seller%20App%20Assets%2FHeader%20Mobile.png?alt=media&token=4c5506cd-2902-488b-b4ae-4eedff61f2b2',
                       ).image,
                     ),
                   ),
@@ -700,8 +700,8 @@ class _ComprarWidgetState extends State<ComprarWidget> {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                               ),
-                              child: Image.asset(
-                                'assets/images/Diseo_sin_ttulo_(3).png',
+                              child: Image.network(
+                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sr-construccion-proveedor-0talpe/assets/ghhgu1gkup4g/Dise%C3%B1o_sin_t%C3%ADtulo_(3).png',
                                 fit: BoxFit.contain,
                               ),
                             ),

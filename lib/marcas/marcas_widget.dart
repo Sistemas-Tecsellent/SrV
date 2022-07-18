@@ -71,8 +71,8 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                 color: Color(0xFFEEEEEE),
                                 image: DecorationImage(
                                   fit: BoxFit.cover,
-                                  image: Image.asset(
-                                    'assets/images/Sin_ttulo_(1080__1500_px)_(1080__700_px)_(1080__500_px).png',
+                                  image: Image.network(
+                                    'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/Seller%20App%20Assets%2FBanner%20Principal%20Desktop.png?alt=media&token=7bc96fb9-84ae-460c-8c32-431da52c2263',
                                   ).image,
                                 ),
                               ),
@@ -90,8 +90,8 @@ class _MarcasWidgetState extends State<MarcasWidget> {
                                 color: Color(0xFFEEEEEE),
                                 image: DecorationImage(
                                   fit: BoxFit.cover,
-                                  image: Image.asset(
-                                    'assets/images/Sin_ttulo_(1080__1500_px)_(1080__1200_px).png',
+                                  image: Image.network(
+                                    'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/Seller%20App%20Assets%2FBanner%20Principal%20Mobile.png?alt=media&token=61abbb35-05fa-4fef-8c42-cd72334e803f',
                                   ).image,
                                 ),
                               ),

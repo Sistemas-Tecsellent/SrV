@@ -103,8 +103,8 @@ class _PedidoListoRecogerEnTiendaSELLERWidgetState
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    context.pop();
                   },
                   text: 'Cancelar',
                   options: FFButtonOptions(
@@ -131,7 +131,7 @@ class _PedidoListoRecogerEnTiendaSELLERWidgetState
                       await actions.deliverPickupOrder(
                         widget.orderId,
                       );
-                      context.pushNamed('Home');
+                      context.pop();
                     },
                     text: 'Entregar',
                     options: FFButtonOptions(

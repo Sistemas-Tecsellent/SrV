@@ -77,8 +77,8 @@ class _InfoTransferenciaWidgetState extends State<InfoTransferenciaWidget> {
                           children: [
                             ClipRRect(
                               borderRadius: BorderRadius.circular(5),
-                              child: Image.asset(
-                                'assets/images/mcatd_1.png',
+                              child: Image.network(
+                                'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FlogoLogin.png?alt=media&token=fa452c40-c004-49d2-9e2c-29e9904a58fd',
                                 width: 150,
                                 fit: BoxFit.contain,
                               ),

@@ -100,14 +100,23 @@ class _NuevoPedidoSELLEREXPRESSWidgetState
               children: [
                 FFButtonWidget(
                   onPressed: () async {
-                    await actions.updateNormalOrderDecision(
-                      nuevoPedidoSELLEREXPRESSOrdersForStoresRecord.orderId,
-                      'rejected',
-                      'rejected',
-                      getCurrentTimestamp,
-                      getCurrentTimestamp,
-                    );
-                    context.pushNamed('Home');
+                    if ((radioButtonValue) == 'Solicitar Repartidor') {
+                      await actions.updateOrderDecision(
+                        widget.orderId,
+                        nuevoPedidoSELLEREXPRESSOrdersForStoresRecord.bundleId,
+                        'rejected',
+                        '----',
+                      );
+                    } else {
+                      await actions.updateOrderDecision(
+                        nuevoPedidoSELLEREXPRESSOrdersForStoresRecord.id,
+                        nuevoPedidoSELLEREXPRESSOrdersForStoresRecord.bundleId,
+                        'rejected',
+                        'own',
+                      );
+                    }
+
+                    context.pop();
                   },
                   text: 'Rechazar Pedido',
                   options: FFButtonOptions(
@@ -149,7 +158,7 @@ class _NuevoPedidoSELLEREXPRESSWidgetState
                         );
                       }
 
-                      context.pushNamed('Home');
+                      context.pop();
                     },
                     text: 'Aceptar Pedido',
                     options: FFButtonOptions(

@@ -21,3 +21,13 @@ int getYear() {
   var now = DateTime.now().year;
   return now;
 }
+
+bool isLessThan(
+  int value,
+  int compareTo,
+) {
+  if (value < compareTo) {
+    return true;
+  }
+  return false;
+}

@@ -44,8 +44,8 @@ class _InicioDeSesionWidgetState extends State<InicioDeSesionWidget> {
               color: FlutterFlowTheme.of(context).primaryColor,
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: Image.asset(
-                  'assets/images/Diseo_sin_ttulo_(10).png',
+                image: Image.network(
+                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/sr-construccion-proveedor-0talpe/assets/jnx4oxxmlyyp/Dise%C3%B1o_sin_t%C3%ADtulo_(10).png',
                 ).image,
               ),
             ),
@@ -419,6 +419,8 @@ class _InicioDeSesionWidgetState extends State<InicioDeSesionWidget> {
                                 if (user == null) {
                                   return;
                                 }
+                                await Future.delayed(
+                                    const Duration(milliseconds: 2000));
                                 if (valueOrDefault(
                                     currentUserDocument?.isApproved, false)) {
                                   context.pushNamedAuth('Home', mounted);
@@ -460,6 +462,8 @@ class _InicioDeSesionWidgetState extends State<InicioDeSesionWidget> {
                                   if (user == null) {
                                     return;
                                   }
+                                  await Future.delayed(
+                                      const Duration(milliseconds: 2000));
                                   if (valueOrDefault(
                                       currentUserDocument?.isApproved, false)) {
                                     context.pushNamedAuth('Home', mounted);

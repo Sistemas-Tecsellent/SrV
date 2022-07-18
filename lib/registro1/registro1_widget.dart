@@ -114,8 +114,8 @@ class _Registro1WidgetState extends State<Registro1Widget> {
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Image.asset(
-                              'assets/images/mcatd_1.png',
+                            Image.network(
+                              'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/assets%2FlogoLogin.png?alt=media&token=fa452c40-c004-49d2-9e2c-29e9904a58fd',
                               height: 70,
                               fit: BoxFit.cover,
                             ),

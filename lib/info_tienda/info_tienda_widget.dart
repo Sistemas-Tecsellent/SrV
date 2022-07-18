@@ -97,8 +97,8 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                 color: Color(0xFFEEEEEE),
                                 image: DecorationImage(
                                   fit: BoxFit.cover,
-                                  image: Image.asset(
-                                    'assets/images/Sin_ttulo_(1080__1500_px)_(1080__700_px)_(1080__500_px).png',
+                                  image: Image.network(
+                                    'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/Seller%20App%20Assets%2FBanner%20Principal%20Desktop.png?alt=media&token=7bc96fb9-84ae-460c-8c32-431da52c2263',
                                   ).image,
                                 ),
                               ),
@@ -116,8 +116,8 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                 color: Color(0xFFEEEEEE),
                                 image: DecorationImage(
                                   fit: BoxFit.cover,
-                                  image: Image.asset(
-                                    'assets/images/Sin_ttulo_(1080__1500_px)_(1080__1200_px).png',
+                                  image: Image.network(
+                                    'https://firebasestorage.googleapis.com/v0/b/srconstruccion-d4663.appspot.com/o/Seller%20App%20Assets%2FBanner%20Principal%20Mobile.png?alt=media&token=61abbb35-05fa-4fef-8c42-cd72334e803f',
                                   ).image,
                                 ),
                               ),
@@ -1206,7 +1206,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                           child:
                                                                               Text(
                                                                             dateTimeFormat('jm',
-                                                                                datePicked1),
+                                                                                rowWorkDaysRecord.opens),
                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                   fontFamily: 'Montserrat',
                                                                                   fontSize: 11,
@@ -1232,6 +1232,11 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                                 },
                                                                                 currentTime: rowWorkDaysRecord.opens,
                                                                               );
+
+                                                                              final workDaysUpdateData = createWorkDaysRecordData(
+                                                                                opens: datePicked1,
+                                                                              );
+                                                                              await rowWorkDaysRecord.reference.update(workDaysUpdateData);
                                                                             },
                                                                             child:
                                                                                 Container(
@@ -1275,7 +1280,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                           child:
                                                                               Text(
                                                                             dateTimeFormat('jm',
-                                                                                datePicked2),
+                                                                                rowWorkDaysRecord.closes),
                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                   fontFamily: 'Montserrat',
                                                                                   fontSize: 11,
@@ -1294,6 +1299,12 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                               },
                                                                               currentTime: rowWorkDaysRecord.closes,
                                                                             );
+
+                                                                            final workDaysUpdateData =
+                                                                                createWorkDaysRecordData(
+                                                                              closes: datePicked2,
+                                                                            );
+                                                                            await rowWorkDaysRecord.reference.update(workDaysUpdateData);
                                                                           },
                                                                           child:
                                                                               Container(
@@ -1456,7 +1467,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                           child:
                                                                               Text(
                                                                             dateTimeFormat('jm',
-                                                                                datePicked3),
+                                                                                rowWorkDaysRecord.opens),
                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                   fontFamily: 'Montserrat',
                                                                                   fontSize: 11,
@@ -1482,6 +1493,11 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                                 },
                                                                                 currentTime: rowWorkDaysRecord.opens,
                                                                               );
+
+                                                                              final workDaysUpdateData = createWorkDaysRecordData(
+                                                                                opens: datePicked3,
+                                                                              );
+                                                                              await rowWorkDaysRecord.reference.update(workDaysUpdateData);
                                                                             },
                                                                             child:
                                                                                 Container(
@@ -1525,7 +1541,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                           child:
                                                                               Text(
                                                                             dateTimeFormat('jm',
-                                                                                datePicked4),
+                                                                                rowWorkDaysRecord.closes),
                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                   fontFamily: 'Montserrat',
                                                                                   fontSize: 11,
@@ -1544,6 +1560,12 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                               },
                                                                               currentTime: rowWorkDaysRecord.closes,
                                                                             );
+
+                                                                            final workDaysUpdateData =
+                                                                                createWorkDaysRecordData(
+                                                                              closes: datePicked4,
+                                                                            );
+                                                                            await rowWorkDaysRecord.reference.update(workDaysUpdateData);
                                                                           },
                                                                           child:
                                                                               Container(
@@ -1706,7 +1728,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                           child:
                                                                               Text(
                                                                             dateTimeFormat('jm',
-                                                                                datePicked5),
+                                                                                rowWorkDaysRecord.opens),
                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                   fontFamily: 'Montserrat',
                                                                                   fontSize: 11,
@@ -1732,6 +1754,11 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                                 },
                                                                                 currentTime: rowWorkDaysRecord.opens,
                                                                               );
+
+                                                                              final workDaysUpdateData = createWorkDaysRecordData(
+                                                                                opens: datePicked5,
+                                                                              );
+                                                                              await rowWorkDaysRecord.reference.update(workDaysUpdateData);
                                                                             },
                                                                             child:
                                                                                 Container(
@@ -1775,7 +1802,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                           child:
                                                                               Text(
                                                                             dateTimeFormat('jm',
-                                                                                datePicked6),
+                                                                                rowWorkDaysRecord.closes),
                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                   fontFamily: 'Montserrat',
                                                                                   fontSize: 11,
@@ -1794,6 +1821,12 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                               },
                                                                               currentTime: rowWorkDaysRecord.closes,
                                                                             );
+
+                                                                            final workDaysUpdateData =
+                                                                                createWorkDaysRecordData(
+                                                                              closes: datePicked6,
+                                                                            );
+                                                                            await rowWorkDaysRecord.reference.update(workDaysUpdateData);
                                                                           },
                                                                           child:
                                                                               Container(
@@ -1956,7 +1989,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                           child:
                                                                               Text(
                                                                             dateTimeFormat('jm',
-                                                                                datePicked7),
+                                                                                rowWorkDaysRecord.opens),
                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                   fontFamily: 'Montserrat',
                                                                                   fontSize: 11,
@@ -1982,6 +2015,11 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                                 },
                                                                                 currentTime: rowWorkDaysRecord.opens,
                                                                               );
+
+                                                                              final workDaysUpdateData = createWorkDaysRecordData(
+                                                                                opens: datePicked7,
+                                                                              );
+                                                                              await rowWorkDaysRecord.reference.update(workDaysUpdateData);
                                                                             },
                                                                             child:
                                                                                 Container(
@@ -2025,7 +2063,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                           child:
                                                                               Text(
                                                                             dateTimeFormat('jm',
-                                                                                datePicked8),
+                                                                                rowWorkDaysRecord.closes),
                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                   fontFamily: 'Montserrat',
                                                                                   fontSize: 11,
@@ -2044,6 +2082,12 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                               },
                                                                               currentTime: rowWorkDaysRecord.closes,
                                                                             );
+
+                                                                            final workDaysUpdateData =
+                                                                                createWorkDaysRecordData(
+                                                                              closes: datePicked8,
+                                                                            );
+                                                                            await rowWorkDaysRecord.reference.update(workDaysUpdateData);
                                                                           },
                                                                           child:
                                                                               Container(
@@ -2206,7 +2250,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                           child:
                                                                               Text(
                                                                             dateTimeFormat('jm',
-                                                                                datePicked9),
+                                                                                rowWorkDaysRecord.opens),
                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                   fontFamily: 'Montserrat',
                                                                                   fontSize: 11,
@@ -2232,6 +2276,11 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                                 },
                                                                                 currentTime: rowWorkDaysRecord.opens,
                                                                               );
+
+                                                                              final workDaysUpdateData = createWorkDaysRecordData(
+                                                                                opens: datePicked9,
+                                                                              );
+                                                                              await rowWorkDaysRecord.reference.update(workDaysUpdateData);
                                                                             },
                                                                             child:
                                                                                 Container(
@@ -2275,7 +2324,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                           child:
                                                                               Text(
                                                                             dateTimeFormat('jm',
-                                                                                datePicked10),
+                                                                                rowWorkDaysRecord.closes),
                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                   fontFamily: 'Montserrat',
                                                                                   fontSize: 11,
@@ -2294,6 +2343,12 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                               },
                                                                               currentTime: rowWorkDaysRecord.closes,
                                                                             );
+
+                                                                            final workDaysUpdateData =
+                                                                                createWorkDaysRecordData(
+                                                                              closes: datePicked10,
+                                                                            );
+                                                                            await rowWorkDaysRecord.reference.update(workDaysUpdateData);
                                                                           },
                                                                           child:
                                                                               Container(
@@ -2456,7 +2511,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                           child:
                                                                               Text(
                                                                             dateTimeFormat('jm',
-                                                                                datePicked11),
+                                                                                rowWorkDaysRecord.opens),
                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                   fontFamily: 'Montserrat',
                                                                                   fontSize: 11,
@@ -2482,6 +2537,11 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                                 },
                                                                                 currentTime: rowWorkDaysRecord.opens,
                                                                               );
+
+                                                                              final workDaysUpdateData = createWorkDaysRecordData(
+                                                                                opens: datePicked11,
+                                                                              );
+                                                                              await rowWorkDaysRecord.reference.update(workDaysUpdateData);
                                                                             },
                                                                             child:
                                                                                 Container(
@@ -2525,7 +2585,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                           child:
                                                                               Text(
                                                                             dateTimeFormat('jm',
-                                                                                datePicked12),
+                                                                                rowWorkDaysRecord.closes),
                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                   fontFamily: 'Montserrat',
                                                                                   fontSize: 11,
@@ -2544,6 +2604,12 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                               },
                                                                               currentTime: rowWorkDaysRecord.closes,
                                                                             );
+
+                                                                            final workDaysUpdateData =
+                                                                                createWorkDaysRecordData(
+                                                                              closes: datePicked12,
+                                                                            );
+                                                                            await rowWorkDaysRecord.reference.update(workDaysUpdateData);
                                                                           },
                                                                           child:
                                                                               Container(
@@ -2706,7 +2772,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                           child:
                                                                               Text(
                                                                             dateTimeFormat('jm',
-                                                                                datePicked13),
+                                                                                rowWorkDaysRecord.opens),
                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                   fontFamily: 'Montserrat',
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
@@ -2733,6 +2799,11 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                                 },
                                                                                 currentTime: rowWorkDaysRecord.opens,
                                                                               );
+
+                                                                              final workDaysUpdateData = createWorkDaysRecordData(
+                                                                                opens: datePicked13,
+                                                                              );
+                                                                              await rowWorkDaysRecord.reference.update(workDaysUpdateData);
                                                                             },
                                                                             child:
                                                                                 Container(
@@ -2777,7 +2848,7 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                           child:
                                                                               Text(
                                                                             dateTimeFormat('jm',
-                                                                                datePicked14),
+                                                                                rowWorkDaysRecord.closes),
                                                                             style: FlutterFlowTheme.of(context).bodyText1.override(
                                                                                   fontFamily: 'Montserrat',
                                                                                   color: FlutterFlowTheme.of(context).primaryText,
@@ -2797,6 +2868,12 @@ class _InfoTiendaWidgetState extends State<InfoTiendaWidget> {
                                                                               },
                                                                               currentTime: rowWorkDaysRecord.closes,
                                                                             );
+
+                                                                            final workDaysUpdateData =
+                                                                                createWorkDaysRecordData(
+                                                                              closes: datePicked14,
+                                                                            );
+                                                                            await rowWorkDaysRecord.reference.update(workDaysUpdateData);
                                                                           },
                                                                           child:
                                                                               Container(

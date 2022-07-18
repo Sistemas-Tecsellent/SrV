@@ -99,7 +99,7 @@ class _PedidoListoEXPRESSWidgetState extends State<PedidoListoEXPRESSWidget> {
               children: [
                 FFButtonWidget(
                   onPressed: () async {
-                    context.pushNamed('Pedidos');
+                    context.pop();
                   },
                   text: 'Cancelar',
                   options: FFButtonOptions(
@@ -130,7 +130,7 @@ class _PedidoListoEXPRESSWidgetState extends State<PedidoListoEXPRESSWidget> {
                       await actions.enablePickupOfOrder(
                         pedidoListoEXPRESSOrdersForStoresRecord.bundleId,
                       );
-                      context.pushNamed('Home');
+                      context.pop();
                     },
                     text: 'Entregar',
                     options: FFButtonOptions(

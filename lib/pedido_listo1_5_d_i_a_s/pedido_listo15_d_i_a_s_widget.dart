@@ -98,7 +98,7 @@ class _PedidoListo15DIASWidgetState extends State<PedidoListo15DIASWidget> {
               children: [
                 FFButtonWidget(
                   onPressed: () async {
-                    context.pushNamed('Pedidos');
+                    context.pop();
                   },
                   text: 'Cancelar',
                   options: FFButtonOptions(
@@ -129,7 +129,7 @@ class _PedidoListo15DIASWidgetState extends State<PedidoListo15DIASWidget> {
                       await actions.enablePickupOfOrder(
                         pedidoListo15DIASOrdersForStoresRecord.bundleId,
                       );
-                      context.pushNamed('Home');
+                      context.pop();
                     },
                     text: 'Entregar',
                     options: FFButtonOptions(

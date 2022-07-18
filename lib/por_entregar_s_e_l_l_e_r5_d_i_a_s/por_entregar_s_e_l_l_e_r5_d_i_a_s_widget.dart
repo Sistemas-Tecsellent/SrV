@@ -113,7 +113,7 @@ class _PorEntregarSELLER5DIASWidgetState
                           bundleId: porEntregarSELLER5DIASOrdersForStoresRecord
                               .bundleId,
                         );
-                        context.pushNamed('Home');
+                        context.pop();
                       },
                       text: 'Finalizar Pedido',
                       options: FFButtonOptions(

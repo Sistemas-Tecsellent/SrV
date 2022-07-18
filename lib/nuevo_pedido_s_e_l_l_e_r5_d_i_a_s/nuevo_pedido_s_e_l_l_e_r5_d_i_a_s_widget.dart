@@ -110,7 +110,7 @@ class _NuevoPedidoSELLER5DIASWidgetState
                       getCurrentTimestamp,
                       getCurrentTimestamp,
                     );
-                    context.pushNamed('Home');
+                    context.pop();
                   },
                   text: 'Rechazar Pedido',
                   options: FFButtonOptions(
@@ -144,7 +144,7 @@ class _NuevoPedidoSELLER5DIASWidgetState
                         datePicked1,
                         datePicked2,
                       );
-                      context.pushNamed('Home');
+                      context.pop();
                     },
                     text: 'Aceptar Pedido',
                     options: FFButtonOptions(
@@ -1138,8 +1138,7 @@ class _NuevoPedidoSELLER5DIASWidgetState
                                   EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
